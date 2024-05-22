@@ -3,7 +3,7 @@ import React from 'react'
 function Footer() {
   return (
     <div className=''>
-        <div className='flex absolute left-[170px] bottom-[240px] z-[999] flex-row gap-32 bg-[#CDEAE1] w-[80%] px-10 rounded-xl'>
+        <div className='flex absolute left-[180px] -bottom-[150px] z-[999] flex-row gap-32 bg-[#CDEAE1] w-[80%] px-10 rounded-xl'>
             <div className='flex flex-col gap-5 py-[24px] relative'>
             <div className='text-5xl typo w-[20%]'>
                 <h1>Subscribe Newsletter</h1>
@@ -21,7 +21,7 @@ function Footer() {
                 <img src="./images/mailbox.png" alt="mailbox" />
             </div>
         </div>
-      <footer className='bg-[#8DD3BB] flex relative justify-between px-32 pt-44 pb-32 mt-60'>
+      <footer className='bg-[#8DD3BB] flex relative justify-between px-32 pt-44 pb-32'>
         <div className='flex flex-col gap-5'>
             <div>
             <img src="./images/footer-logo.png" alt="logo" />
@@ -30,7 +30,7 @@ function Footer() {
                 <a href=""><img src="./images/facebook-black.png" alt="fb" /></a>
                 <a href=""><img src="./images/twitter-black.png" alt="twitter" /></a>
                 <a href=""><img src="./images/yt-black.png" alt="yt" /></a>
-                <a href=""><img src="./images/yt-black.png" alt="yt" /></a>
+                <a href=""><img src="./images/instagram-black.png" alt="insta" /></a>
             </div>
         </div>
         <div className='typo'>   

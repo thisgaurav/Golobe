@@ -7,3 +7,7 @@
   font-weight: 600;
   line-height: normal;
 }
+
+.banner-bg{
+ filter: brightness(.7);
+} 
