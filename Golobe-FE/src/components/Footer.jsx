@@ -2,8 +2,9 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div className=''>
-        <div className='flex absolute left-[180px] -bottom-[150px] z-[999] flex-row gap-32 bg-[#CDEAE1] w-[80%] px-10 rounded-xl'>
+    <div className='mt-72'>
+        <div className='flex justify-center'>
+        <div className='absolute z-999 -bottom-[147rem] flex flex-row gap-32 bg-[#CDEAE1] w-[80%] px-10 rounded-xl'>
             <div className='flex flex-col gap-5 py-[24px] relative'>
             <div className='text-5xl typo w-[20%]'>
                 <h1>Subscribe Newsletter</h1>
@@ -21,7 +22,9 @@ function Footer() {
                 <img src="./images/mailbox.png" alt="mailbox" />
             </div>
         </div>
-      <footer className='bg-[#8DD3BB] flex relative justify-between px-32 pt-44 pb-32'>
+        </div>
+        
+      <footer className='bg-[#8DD3BB] flex justify-between px-32 pt-44 pb-32'>
         <div className='flex flex-col gap-5'>
             <div>
             <img src="./images/footer-logo.png" alt="logo" />
