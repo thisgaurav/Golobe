@@ -11,6 +11,9 @@
 .banner-bg{
  filter: brightness(.7);
 } 
+body{
+  background-color: #FAFBFC;
+}
 
 .flight-card{
 padding: 24px 16px;
