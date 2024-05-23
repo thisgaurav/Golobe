@@ -1,19 +1,19 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import FlightListing from './components/FlightListing'
 import FlightSearch from './components/FlightSearch'
-import Footer from './components/Footer'
-import Header from './components/Header'
 import Home from './components/Home'
-
+import Header from './components/Header'
+import Footer from './components/Footer'
 function App() {
 
   return (
     <>
-      {/* <FlightSearch/> */}
-      <FlightListing/>
-      
-      <Home/>
-      <Footer/> 
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/flight-list' element={<FlightListing/>}/>
+        <Route path='/flight-search' element={<FlightSearch/>}/>
+      </Routes>
     </>
   )
 }
