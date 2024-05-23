@@ -1,4 +1,5 @@
 import './App.css'
+import FlightListing from './components/FlightListing'
 import FlightSearch from './components/FlightSearch'
 import Footer from './components/Footer'
 import Header from './components/Header'
@@ -8,7 +9,8 @@ function App() {
 
   return (
     <>
-      <FlightSearch/>
+      {/* <FlightSearch/> */}
+      <FlightListing/>
       
     </>
   )
