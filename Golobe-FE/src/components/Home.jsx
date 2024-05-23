@@ -3,13 +3,15 @@ import "../component-styles/styles.css";
 import { LuPlus } from "react-icons/lu";
 import { IoSend } from "react-icons/io5";
 import { IoSwapHorizontal } from "react-icons/io5";
-import { Input, Select, Option, Rating } from "@material-tailwind/react";
+import { Input, Select, Option } from "@material-tailwind/react";
 import {
   Card,
   CardHeader,
   CardBody,
   Typography,
+  Rating,
 } from "@material-tailwind/react";
+import Footer from "./Footer";
  
 
 function Home() {
@@ -313,12 +315,12 @@ function Home() {
           </div>
         </div>
       </CardBody>
-      <CardHeader floated={false} color="blue-gray" className="flex items-center justify-center pb-5">
+      <div floated={false} className="flex items-center justify-center pb-5">
         <img
           src="./images/olga.png"
-          alt="ui/ux review check"
+          alt=""
         />
-      </CardHeader>
+      </div>
     </Card>
     <Card className="w-full max-w-[26rem] shadow-[15px_15px_0px_0px_rgba(141,211,187,0.40)]">
       <CardBody>
@@ -343,12 +345,12 @@ function Home() {
           </div>
         </div>
       </CardBody>
-      <CardHeader floated={false} color="blue-gray" className="flex items-center justify-center pb-5">
+      <div floated={false} className="flex items-center justify-center pb-5">
         <img
           src="./images/Thomas.png"
           alt="ui/ux review check"
         />
-      </CardHeader>
+      </div>
     </Card>
     <Card className="w-full max-w-[26rem] shadow-[15px_15px_0px_0px_rgba(141,211,187,0.40)]">
       <CardBody>
@@ -373,16 +375,16 @@ function Home() {
           </div>
         </div>
       </CardBody>
-      <CardHeader floated={false} color="blue-gray" className="flex items-center justify-center pb-5">
-        <img
+      <div floated={false} className="flex items-center justify-center pb-5">
+        <img className="rounded-lg"
           src="./images/Eliot.png"
           alt="ui/ux review check"
         />
-      </CardHeader>
+      </div>
     </Card>
     </div>
         </section>
-    
+    <Footer/>
 
     </>
   );
