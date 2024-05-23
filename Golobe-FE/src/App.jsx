@@ -5,15 +5,17 @@ import FlightSearch from './components/FlightSearch'
 import Home from './components/Home'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import AddCardModal from './components/Modals/AddCardModal'
 function App() {
 
   return (
     <>
-      <Routes>
+      {/* <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/flight-list' element={<FlightListing/>}/>
         <Route path='/flight-search' element={<FlightSearch/>}/>
-      </Routes>
+      </Routes> */}
+      <AddCardModal/>
     </>
   )
 }
