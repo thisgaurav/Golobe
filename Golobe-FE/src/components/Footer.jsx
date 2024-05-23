@@ -4,7 +4,7 @@ function Footer() {
   return (
     <div className='mt-72'>
         <div className='flex justify-center'>
-        <div className='absolute z-999 -bottom-[147rem] flex flex-row gap-32 bg-[#CDEAE1] w-[80%] px-10 rounded-xl'>
+        <div className='absolute z-999 bottom-[-85rem] flex flex-row gap-32 bg-[#CDEAE1] w-[80%] px-10 rounded-xl'>
             <div className='flex flex-col gap-5 py-[24px] relative'>
             <div className='text-5xl typo w-[20%]'>
                 <h1>Subscribe Newsletter</h1>

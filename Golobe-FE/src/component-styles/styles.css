@@ -14,3 +14,11 @@
 body{
   background-color: #FAFBFC;
 }
+
+.flight-card{
+padding: 24px 16px;
+align-items: flex-start;
+border-radius: 12px;
+background: var(--Neutrals, #FFF);
+box-shadow: 0px 4px 16px 0px rgba(17, 34, 17, 0.05);
+}
