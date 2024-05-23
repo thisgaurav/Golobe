@@ -14,6 +14,7 @@ function App() {
         <Route path='/flight-list' element={<FlightListing/>}/>
         <Route path='/flight-search' element={<FlightSearch/>}/>
       </Routes>
+    
     </>
   )
 }
