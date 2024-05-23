@@ -2,7 +2,7 @@ import React from 'react'
 import '../component-styles/styles.css'
 function Header() {
   return (
-    <div className='flex justify-center mt-4'>
+    <div className='flex justify-center sticky top-0 bg-white z-[9999]'>
       <nav className=' w-full flex px-20 py-6 justify-between items-center'>
         <div className='flex gap-9'>
           <div>
