@@ -8,8 +8,10 @@ function App() {
 
   return (
     <>
-      <FlightSearch/>
+      {/* <FlightSearch/> */}
       
+      <Home/>
+      <Footer/> 
     </>
   )
 }

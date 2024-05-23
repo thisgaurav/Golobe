@@ -11,3 +11,6 @@
 .banner-bg{
  filter: brightness(.7);
 } 
+body{
+  background-color: #FAFBFC;
+}
