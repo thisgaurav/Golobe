@@ -12,6 +12,8 @@ function App() {
       {/* <FlightSearch/> */}
       <FlightListing/>
       
+      <Home/>
+      <Footer/> 
     </>
   )
 }
