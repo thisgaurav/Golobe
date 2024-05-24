@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import BookingDetail from './components/BookingDetail'
 import HotelSearch from './components/HotelSearch'
 import HotelListing from './components/HotelListing'
+import Favorites from './components/Favorites'
 function App() {
 
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/booking-details' element={<BookingDetail/>}/>
         <Route path='/hotel-search' element={<HotelSearch/>}/>
         <Route path='/hotel-listing' element={<HotelListing/>}/>
+        <Route path='/favorites' element={<Favorites/>}/>
       </Routes>
       <Footer/>
     </>
