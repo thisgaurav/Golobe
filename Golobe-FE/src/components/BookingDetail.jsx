@@ -1,9 +1,13 @@
-import React from "react";
-import Footer from "./Footer";
-
+import {useState} from "react";
+import AddCard from "./AddCard";
+import AddCardModal from './Modals/AddCardModal';
 function BookingDetail() {
+  const [isClicked, setisClicked] = useState(false);
+    const closeModal = () => setisClicked(false);
   return (
+    
     <div>
+      {isClicked && <AddCardModal closeModal={closeModal} />}
       <div className="flex justify-center sticky top-0 bg-white z-[9999]">
         <nav className=" w-full flex px-20 py-6 justify-between items-center">
           <div className="flex gap-9">
@@ -42,7 +46,7 @@ function BookingDetail() {
         <div className="m-24 gap-10 typo flex">
           <div className="w-[60%]">
             <div className="py-[24px] px-[32px] mb-10 shadow-[0px_4px_16px_0px_rgba(17,34,17,0.05)] rounded-xl">
-              <div className="my-6">
+              <div className="my-6">    
                 <div className="flex justify-between">
                   <div className="flex flex-col gap-6">
                     <h1 className="text-3xl">Emirates A380 Airbus</h1>
@@ -178,6 +182,7 @@ function BookingDetail() {
                 </button>
               </div>
             </div>
+          <AddCard setisClicked={setisClicked}/>
           </div>
           <div className="w-[40%] h-[490px] p-6 shadow-[0px_4px_16px_0px_rgba(17,34,17,0.05)]">
             <div className="flex gap-5 border-b-[2px] pb-4">
