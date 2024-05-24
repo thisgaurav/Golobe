@@ -485,8 +485,6 @@ function FlightListing() {
           </div>
         </div>
       </section>
-
-      <Footer/>
     </div>
   );
 }
