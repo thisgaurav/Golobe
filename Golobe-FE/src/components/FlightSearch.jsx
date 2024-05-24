@@ -270,7 +270,6 @@ function FlightSearch() {
           
         </section>
       </div>
-      <Footer />
     </>
   );
 }

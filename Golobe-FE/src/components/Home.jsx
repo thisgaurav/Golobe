@@ -384,7 +384,7 @@ function Home() {
     </Card>
     </div>
         </section>
-    <Footer/>
+
 
     </>
   );
