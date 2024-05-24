@@ -5,6 +5,8 @@ import FlightSearch from './components/FlightSearch'
 import Home from './components/Home'
 import Footer from './components/Footer'
 import BookingDetail from './components/BookingDetail'
+import HotelSearch from './components/HotelSearch'
+import HotelListing from './components/HotelListing'
 function App() {
 
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path='/flight-list' element={<FlightListing/>}/>
         <Route path='/flight-search' element={<FlightSearch/>}/>
         <Route path='/booking-details' element={<BookingDetail/>}/>
+        <Route path='/hotel-search' element={<HotelSearch/>}/>
+        <Route path='/hotel-listing' element={<HotelListing/>}/>
       </Routes>
       <Footer/>
     </>
