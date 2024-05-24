@@ -1,13 +1,14 @@
 import React from "react";
 import {Select, Option} from '@material-tailwind/react'
 import "../../component-styles/modal.css";
-function AddCardModal() {
+function AddCardModal({closeModal}) {
+  
   return (
     <div>
       <div className="modal-wrapper w-100 d-flex align-items-center justify-content-center">
         <div className="modal-container typo h-[744px]" >
           <div className="w-full flex justify-end">
-            <button>
+            <button onClick={closeModal}>
               <img src="./images/close.png" alt="" />
             </button>
           </div>
