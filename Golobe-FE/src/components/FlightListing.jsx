@@ -4,6 +4,7 @@ import { LuPlus } from "react-icons/lu";
 import { IoSend } from "react-icons/io5";
 import "../component-styles/styles.css";
 import Footer from "./Footer";
+
 function FlightListing() {
   return (
     <div>
@@ -28,7 +29,7 @@ function FlightListing() {
           </div>
           <div className="flex gap-10">
             <div className="flex gap-5 items-center">
-              <a href="">
+              <a href="" className="border-r-[3px] border-[#000] pr-4">
                 <img src="./images/Favorite.png" alt="" />
               </a>
               <div>
@@ -243,7 +244,6 @@ function FlightListing() {
                     <p className="font-normal">Starting From</p>
                     <p className="text-[#FF8682] text-3xl font-semibold text-right">$104</p>
                   </div>
-                  <div></div>
                 </div>
                 <div className="flex flex-col gap-5 pb-3 border-b-[2px]">
                     <div className="flex gap-16">

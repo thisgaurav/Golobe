@@ -8,6 +8,8 @@ import BookingDetail from './components/BookingDetail'
 import HotelSearch from './components/HotelSearch'
 import HotelListing from './components/HotelListing'
 import Favorites from './components/Favorites'
+import FlightDetails from './components/FlightDetails'
+import TicketDetails from './components/TicketDetails'
 function App() {
 
   return (
@@ -16,10 +18,12 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/flight-list' element={<FlightListing/>}/>
         <Route path='/flight-search' element={<FlightSearch/>}/>
+        <Route path='/flight-details' element={<FlightDetails/>}/>
         <Route path='/booking-details' element={<BookingDetail/>}/>
         <Route path='/hotel-search' element={<HotelSearch/>}/>
         <Route path='/hotel-listing' element={<HotelListing/>}/>
         <Route path='/favorites' element={<Favorites/>}/>
+        <Route path='/ticket-details' element={<TicketDetails/>}/>
       </Routes>
       <Footer/>
     </>

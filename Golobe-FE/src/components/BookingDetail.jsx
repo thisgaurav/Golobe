@@ -29,7 +29,7 @@ function BookingDetail() {
           </div>
           <div className="flex gap-10">
             <div className="flex gap-5 items-center">
-              <a href="">
+              <a href="" className="border-r-[3px] border-[#000] pr-4">
                 <img src="./images/Favorite.png" alt="" />
               </a>
               <div>
@@ -230,6 +230,9 @@ function BookingDetail() {
             </div>
           </div>
         </div>
+      </section>
+      <section>
+        
       </section>
     </div>
   );
