@@ -94,7 +94,76 @@ function FlightDetails() {
           </div>
         </nav>
       </div>
-
+      <section className='font-["Montserrat"] mx-32 mb-6'>
+        <div className="flex gap-2 my-10 font-normal">
+          <span className="font-semibold text-[#FF8682]">Turkey</span>
+          <img className="h-5 w-5" src="./images/arrow_forward.png" alt="" />
+          <span className="font-semibold text-[#FF8682]">Istanbul</span>
+          <img className="h-5 w-5" src="./images/arrow_forward.png" alt="" />
+          <span className="text-[#9da49d]">
+            CVK Park Bosphorus Hotel Istanbul
+          </span>
+        </div>
+        <div className="flex justify-between">
+          <div className="flex flex-col">
+            <h1 className='font-semibold font-["Trade_Gothic_LT_Std"] text-[24px] mb-4'>
+              Emirates A380 Airbus
+            </h1>
+            <div className="flex gap-1 items-center mb-2">
+              <img className="h-5 w-5" src="./images/Location.png" alt="" />
+              <p>Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437</p>
+            </div>
+            <div className="flex gap-2 items-center">
+              <div className="border-[1px] border-[#8DD3BB] rounded-md w-[40px] h-[32px] flex items-center justify-center">
+              <button className="font-semibold">4.2</button>
+              </div>
+              <p className="flex items-center gap-2 font-normal"><span className="typo font-bold">Very Good</span>54 reviews</p>
+            </div>
+          </div>
+          <div className="flex flex-col justify-between">
+            <span className="text-[#FF8682] text-4xl font-semibold text-right">
+              $240
+            </span>
+            <div className="flex gap-4">
+              <button className="py-2 px-4 border-[#8DD3BB] border-[2px] rounded-md">
+                <img className="h-5 w-10" src="./images/heart.png" alt="" />
+              </button>
+              <button className="py-2 px-4 border-[#8DD3BB] border-[2px] rounded-md">
+                <img className="h-5 w-9" src="./images/Share.png" alt="" />
+              </button>
+              <button className="w-full bg-[#8DD3BB] rounded-md py-2 px-4 font-semibold">
+                Book now
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="mx-32">
+      <div className="flex flex-col gap-6">
+      <div className="mb-10">
+        <img
+          className="h-auto w-full max-w-full rounded-lg  object-center md:h-[480px]"
+          src={active}
+          alt=""
+        />
+      </div>
+      <div>
+        <h1 className="font-semibold font-['Trade_Gothic_LT_Std'] text-[24px] ">Basic Economy Features</h1>
+      </div>
+      <div className="flex gap-5">
+        {data.map(({ imgelink }, index) => (
+          <div key={index}>
+            <img
+              onClick={() => setActive(imgelink)}
+              src={imgelink}
+              className="w-[120px] h-[120px] cursor-pointer rounded-lg object-cover object-center"
+              alt="gallery-image"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+    </section>
       <section className="font-['Montserrat']">
         <div className=" rounded-lg bg-[#8DD3BB99] mx-32 mt-10 p-4">
         <div className="font-semibold text-[24px] font-['Trade_Gothic_LT_Std'] mb-4">
