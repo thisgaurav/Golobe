@@ -4,8 +4,10 @@ import { Input } from "@material-tailwind/react";
 import '../component-styles/styles.css'
 import 'react-toastify/dist/ReactToastify.css'; 
 import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 function SignUp() {
+  const navigate = useNavigate()
   const [newUser, setNewUser] = useState({
     firstName: "",
     lastName: "",
@@ -39,6 +41,7 @@ function SignUp() {
       saveUser();
     }
     toast.success("User registered successfully")
+    navigate('/payment')
   };
 
   const validatePassword = () =>{

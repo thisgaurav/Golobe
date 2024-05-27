@@ -75,7 +75,7 @@ function LoginForm() {
               </div>
               <div className="mt-12 flex flex-col gap-6 ">
                 <div className="">
-                  <Input name="email" onChange={handleChange} value={user.email} className="h-[50px]" variant=" d" label="Email" type="email" />
+                  <Input name="email" onChange={handleChange} value={user.email} className="h-[50px]" variant="outlined" label="Email" type="email" />
                 </div>
                 <div>
                   <Input name="password" onChange={handleChange} value={user.password} className="h-[50px]" variant="outlined" label="Password" type="password" />
@@ -88,7 +88,7 @@ function LoginForm() {
                     </label>
                   </div>
                   <div>
-                    <a href="" className="text-[#FF8682]">
+                    <a href="/forgot-password" className="text-[#FF8682]">
                       Forgot Password
                     </a>
                   </div>

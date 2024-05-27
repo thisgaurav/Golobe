@@ -12,6 +12,10 @@ import FlightDetails from './components/FlightDetails'
 import TicketDetails from './components/TicketDetails'
 import LoginForm from './components/LoginForm'
 import SignUp from './components/SignUp'
+import ForgotPassword from './components/ForgotPassword'
+import VerifyCode from './components/VerifyCode'
+import ResetPassword from './components/ResetPassword'
+import PaymentMethod from './components/PaymentMethod'
 function App() {
 
   return (
@@ -28,6 +32,10 @@ function App() {
         <Route path='/ticket-details' element={<TicketDetails/>}/>
         <Route path='/login' element={<LoginForm/>}/>
         <Route path='/sign-up' element={<SignUp/>}/>
+        <Route path='/forgot-password' element={<ForgotPassword/>}/>
+        <Route path='/verify' element={<VerifyCode/>}/>
+        <Route path='/set-password' element={<ResetPassword/>}/>
+        <Route path='/payment' element={<PaymentMethod/>}/>
       </Routes>
       <Footer/>
     </>
