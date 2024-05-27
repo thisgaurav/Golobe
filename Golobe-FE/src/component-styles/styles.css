@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url(https://db.onlinewebfonts.com/c/5a0f0898607ff13456025e5ac5aa53df?family=Trade+Gothic+LT+W03+Bold+Ext);
+@import url('https://db.onlinewebfonts.com/c/5a0f0898607ff13456025e5ac5aa53df?family=Trade+Gothic+LT+W03+Bold+Ext');
 .typo {
-  font-family: Montserrat;
+  font-family: 'Montserrat';
   font-size: 14px;
   font-style: normal;
   font-weight: 600;

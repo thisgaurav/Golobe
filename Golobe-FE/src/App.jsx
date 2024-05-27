@@ -10,6 +10,8 @@ import HotelListing from './components/HotelListing'
 import Favorites from './components/Favorites'
 import FlightDetails from './components/FlightDetails'
 import TicketDetails from './components/TicketDetails'
+import LoginForm from './components/LoginForm'
+import SignUp from './components/SignUp'
 function App() {
 
   return (
@@ -24,6 +26,8 @@ function App() {
         <Route path='/hotel-listing' element={<HotelListing/>}/>
         <Route path='/favorites' element={<Favorites/>}/>
         <Route path='/ticket-details' element={<TicketDetails/>}/>
+        <Route path='/login' element={<LoginForm/>}/>
+        <Route path='/sign-up' element={<SignUp/>}/>
       </Routes>
       <Footer/>
     </>
