@@ -24,24 +24,30 @@ function SignUp() {
   };
 
   const saveUser = async() =>{
-    const response = await fetch('/api/golobe',{
-      method:'POST',
-      body: JSON.stringify(newUser),
-      headers:{
-        'Content-Type':'application/json'
-      }
-    })
-    console.log(response);
-  }
+    try{
+      const response = await fetch('/api/golobe',{
+        method:'POST',
+        body: JSON.stringify(newUser),
+        headers:{
+          'Content-Type':'application/json'
+        }
+      })
+      console.log(response);
+    }
+    catch(err){
+      console.log(err)
+    }
+    }
+   
 
   const onSubmit = async(e) => {
     e.preventDefault();
     validatePassword();
     if(isSame){
       saveUser();
+      navigate('/payment')
+      toast.success("User registered successfully")
     }
-    toast.success("User registered successfully")
-    navigate('/payment')
   };
 
   const validatePassword = () =>{
@@ -58,6 +64,7 @@ function SignUp() {
       setIsSame(true)
     }
   }
+  
 
   return (
     <div className='overflow-x-hidden typo'>
