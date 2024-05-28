@@ -5,7 +5,8 @@
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "mongoose": "^8.4.0",
-    "nodemon": "^3.1.1"
+    "nodemon": "^3.1.1",
+    "react-toastify": "^10.0.5"
   },
   "name": "golobe-be",
   "version": "1.0.0",

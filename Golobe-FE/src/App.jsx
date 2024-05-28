@@ -16,6 +16,7 @@ import ForgotPassword from './components/ForgotPassword'
 import VerifyCode from './components/VerifyCode'
 import ResetPassword from './components/ResetPassword'
 import PaymentMethod from './components/PaymentMethod'
+import HotelDescription from './components/HotelDescription'
 function App() {
 
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path='/verify' element={<VerifyCode/>}/>
         <Route path='/set-password' element={<ResetPassword/>}/>
         <Route path='/payment' element={<PaymentMethod/>}/>
+        <Route path='/Hotel-description' element={<HotelDescription/>}/>
       </Routes>
       <Footer/>
     </>
