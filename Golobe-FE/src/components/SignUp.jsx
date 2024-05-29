@@ -69,7 +69,7 @@ function SignUp() {
         </div>
         <div className="w-[30%]">
         <div className='mb-10'>
-            <img src="./images/logo-black.png" alt="" />
+           <a href=""><img src="./images/logo-black.png" alt="" /></a>
           </div>
 
           <div className='typo'>

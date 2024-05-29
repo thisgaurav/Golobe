@@ -8,7 +8,7 @@ function ResetPassword() {
         <div className="w-[30%] flex flex-col typo">
             
           <div className='mb-16'>
-            <img src="./images/logo-black.png" alt="" />
+           <a href="/"><img src="./images/logo-black.png" alt="" /></a> 
           </div>
 
           <div className="typo">
