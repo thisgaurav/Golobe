@@ -17,6 +17,9 @@ import VerifyCode from './components/VerifyCode'
 import ResetPassword from './components/ResetPassword'
 import PaymentMethod from './components/PaymentMethod'
 import HotelDescription from './components/HotelDescription'
+import Account from './components/Account'
+import AccountHistory from './components/AccountHistory'
+import AccountPayment from './components/AccountPayment'
 function App() {
 
   return (
@@ -38,6 +41,9 @@ function App() {
         <Route path='/set-password' element={<ResetPassword/>}/>
         <Route path='/payment' element={<PaymentMethod/>}/>
         <Route path='/Hotel-description' element={<HotelDescription/>}/>
+        <Route path='/account' element={<Account/>}/>
+        <Route path='/account-history' element={<AccountHistory/>}/>
+        <Route path='/account-payment' element={<AccountPayment/>}/>
       </Routes>
       <Footer/>
     </>
