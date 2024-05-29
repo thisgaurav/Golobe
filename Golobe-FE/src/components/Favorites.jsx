@@ -106,7 +106,7 @@ function Favorites() {
                       <img src="./images/heart.png" alt="" />
                     </button>
                     <button className="w-full bg-[#8DD3BB] rounded-md">
-                      View Deals
+                     <a href="/hotel-description">View Deals</a> 
                     </button>
                   </div>
                 </div>
