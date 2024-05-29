@@ -65,12 +65,13 @@ function HotelSearch() {
               <LuPlus />
               <button>Add Promo Code</button>
             </div>
-            <div className="flex items-center justify-center gap-1 p-4 bg-[#8DD3BB]  rounded-md">
+           <a href="/hotel-listing">
+           <div className="flex items-center justify-center gap-1 p-4 bg-[#8DD3BB]  rounded-md">
               <div className="-rotate-45">
                 <img src="./images/building.png" alt="" />
               </div>
               <button>Show Places</button>
-            </div>
+            </div></a> 
           </div>
         </div>
       </div>

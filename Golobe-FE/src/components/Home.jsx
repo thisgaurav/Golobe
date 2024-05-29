@@ -130,7 +130,7 @@ function Home() {
               <div className="-rotate-45">
                 <IoSend />
               </div>
-              <button>Show Filghts</button>
+              <a href="/flight-list"><button>Show Filghts</button></a>
             </div>
           </div>
         </div>
@@ -250,7 +250,7 @@ function Home() {
                 </div>
                </div>
                 <div className="flex justify-center mb-5">
-                  <button className="w-[144px] text-black typo bg-[#8DD3BB] p-3 rounded-md flex items-center justify-center gap-1"><IoSend className="-rotate-45 h-4 w-4"/>Show Flight</button>
+                  <a href="/flight-list"><button className="w-[144px] text-black typo bg-[#8DD3BB] p-3 rounded-md flex items-center justify-center gap-1"><IoSend className="-rotate-45 h-4 w-4"/>Show Flight</button></a>
                 </div>
                 </div> 
               </div>
@@ -268,7 +268,9 @@ function Home() {
                 </div>
                </div>
                 <div className="flex justify-center mb-5">
-                  <button className="w-[144px] text-black typo bg-[#8DD3BB] p-3 rounded-md flex items-center justify-center gap-1"><IoSend className="-rotate-45 h-4 w-4"/>Show Flight</button>
+                  <a href="/hotel-listing">
+                  <button className="w-[144px] text-black typo bg-[#8DD3BB] p-3 rounded-md flex items-center justify-center gap-1"><IoSend className="-rotate-45 h-4 w-4"/>Show Places</button>
+                  </a>
                 </div>
                 </div> 
               </div>

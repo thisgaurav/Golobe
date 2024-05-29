@@ -60,7 +60,7 @@ function LoginForm() {
       <div className="w-full p-32 flex gap-28 ml-72">
         <div className="w-[30%] flex flex-col gap-16 typo">
           <div>
-           <a href="/"><img src="./images/logo-black.png" alt="" /></a> 
+            <img src="./images/logo-black.png" alt="" />
           </div>
 
           <div className="typo">

@@ -77,7 +77,7 @@ function FlightDetails() {
             </div>
           </div>
           <div className="flex items-center justify-center mt-3">
-            <img src="./images/logo-black.png" alt="logo" />
+           <a href="/"><img src="./images/logo-black.png" alt="logo" /></a> 
           </div>
           <div className="flex gap-10">
             <div className="flex gap-5 items-center">
@@ -132,7 +132,7 @@ function FlightDetails() {
                 <img className="h-5 w-9" src="./images/Share.png" alt="" />
               </button>
               <button className="w-full bg-[#8DD3BB] rounded-md py-2 px-4 font-semibold">
-                Book now
+                <a href="/booking-details">Book now</a>
               </button>
             </div>
           </div>

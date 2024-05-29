@@ -24,13 +24,13 @@ function Profile() {
       </div>
       <div className="flex gap-10 w-full p-3 shadow-[0px_4px_16px_0px_rgba(17,34,17,0.05)] typo mb-10 rounded-2xl">
           <div className="w-[33%] border-r-[2px] p-2">
-            <h1 className="mb-2">Account</h1>
+            <a href="/account"><h1 className="mb-2">Account</h1></a>
           </div>
           <div className="w-[33%] border-r-[2px] p-2">
-            <h1 className="mb-2">History</h1>
+            <a href="account-history"><h1 className="mb-2">History</h1></a>
           </div>
           <div className="w-[33%] p-2">
-            <h1 className="mb-2">Payment methods</h1>
+            <a href="/account-payment"><h1 className="mb-2">Payment methods</h1></a>
           </div>
         </div>
     </div>

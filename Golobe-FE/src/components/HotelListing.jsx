@@ -24,11 +24,11 @@ function HotelListing() {
           </div>
           <div className="flex gap-10">
             <div className="flex gap-5 items-center">
-              <a href="">
+              <a href="/favorites">
                 <img src="./images/Favorite.png" alt="" />
               </a>
               <div>
-                <a href="" className="flex gap-2 items-center">
+                <a href="/account" className="flex gap-2 items-center">
                   <img src="./images/Profile.png" alt="" />
                   <p className="typo">John D.</p>
                 </a>
@@ -249,9 +249,11 @@ function HotelListing() {
                   <button className="p-3 border-[#8DD3BB] border-[2px]">
                     <img src="./images/heart.png" alt="" />
                   </button>
+                  
                   <button className="w-full bg-[#8DD3BB] rounded-md">
-                    View Deals
+                  <a href="/hotel-description">View Deals</a>
                   </button>
+                  
                 </div>
                 </div>
               </div>

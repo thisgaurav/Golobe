@@ -20,7 +20,7 @@ function HotelDescription() {
             </div>
           </div>
           <div className="flex items-center justify-center mt-3">
-            <img src="./images/logo-black.png" alt="logo" />
+            <a href="/"><img src="./images/logo-black.png" alt="logo" /></a>
           </div>
           <div className="flex gap-10">
             <div className="flex gap-5 items-center">
