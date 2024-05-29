@@ -24,24 +24,25 @@ function SignUp() {
   };
 
   const saveUser = async() =>{
-    const response = await fetch('/api/golobe',{
-      method:'POST',
-      body: JSON.stringify(newUser),
-      headers:{
-        'Content-Type':'application/json'
-      }
-    })
-    console.log(response);
-  }
+    try{
+      const response = await fetch('/api/golobe',{
+        method:'POST',
+        body: JSON.stringify(newUser),
+        headers:{
+          'Content-Type':'application/json'
+        }
+      })
+      console.log(response);
+    }
+    catch(err){
+      console.log(err)
+    }
+    }
+   
 
   const onSubmit = async(e) => {
     e.preventDefault();
     validatePassword();
-    if(isSame){
-      saveUser();
-    }
-    toast.success("User registered successfully")
-    navigate('/payment')
   };
 
   const validatePassword = () =>{
@@ -50,14 +51,14 @@ function SignUp() {
       document.getElementById('err').style.color="red";
       setIsSame(false);
     }
-    else if(newUser.password.length < 8){
-        document.getElementById("err").innerHTML = "Password should contain atleast 8 characters";
-        document.getElementById("err").style.color = "red";
-      }
     else{
-      setIsSame(true)
+      setIsSame(true);
+      saveUser();
+      navigate('/payment');
+      toast.success("User registered successfully");
     }
   }
+  
 
   return (
     <div className='overflow-x-hidden typo'>
