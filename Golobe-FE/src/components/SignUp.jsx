@@ -43,11 +43,6 @@ function SignUp() {
   const onSubmit = async(e) => {
     e.preventDefault();
     validatePassword();
-    if(isSame){
-      saveUser();
-      navigate('/payment')
-      toast.success("User registered successfully")
-    }
   };
 
   const validatePassword = () =>{
@@ -56,12 +51,11 @@ function SignUp() {
       document.getElementById('err').style.color="red";
       setIsSame(false);
     }
-    else if(newUser.password.length < 8){
-        document.getElementById("err").innerHTML = "Password should contain atleast 8 characters";
-        document.getElementById("err").style.color = "red";
-      }
     else{
-      setIsSame(true)
+      setIsSame(true);
+      saveUser();
+      navigate('/payment');
+      toast.success("User registered successfully");
     }
   }
   
