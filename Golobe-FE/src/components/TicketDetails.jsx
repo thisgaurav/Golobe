@@ -7,13 +7,13 @@ function TicketDetails() {
         <nav className=" w-full flex px-20 py-6 justify-between items-center">
           <div className="flex gap-9">
             <div>
-              <a className="flex gap-2 typo items-center text-center" href="">
+              <a className="flex gap-2 typo items-center text-center" href="/flight-search">
                 <img src="./images/airplane.png" />
                 <p>Find Flight</p>
               </a>
             </div>
             <div>
-              <a href="" className="flex gap-2 items-center text-center typo">
+              <a href="/hotel-search" className="flex gap-2 items-center text-center typo">
                 <img src="./images/ion_bed.png" />
                 <p>Find Stays</p>
               </a>
@@ -24,11 +24,11 @@ function TicketDetails() {
           </div>
           <div className="flex gap-10">
             <div className="flex gap-5 items-center">
-              <a href="" className="border-r-[3px] border-[#000] pr-4">
+              <a href="/favorites" className="border-r-[3px] border-[#000] pr-4">
                 <img src="./images/Favorite.png" alt="" />
               </a>
               <div>
-                <a href="" className="flex gap-2 items-center">
+                <a href="/account" className="flex gap-2 items-center">
                   <img src="./images/Profile.png" alt="" />
                   <p className="typo">John D.</p>
                 </a>

@@ -27,7 +27,7 @@ function Footer() {
       <footer className='bg-[#8DD3BB] flex justify-between px-32 pt-44 pb-32'>
         <div className='flex flex-col gap-5'>
             <div>
-            <img src="./images/footer-logo.png" alt="logo" />
+            <a href="/"><img src="./images/footer-logo.png" alt="logo" /></a>
             </div>
             <div className='flex gap-4'>
                 <a href=""><img src="./images/facebook-black.png" alt="fb" /></a>

@@ -10,7 +10,7 @@ function PaymentMethod() {
         </div>
         <div className="w-[30%]">
         <div className='mb-10'>
-            <img src="./images/logo-black.png" alt="" />
+            <a href="/"><img src="./images/logo-black.png" alt="" /></a>
           </div>
           <div className='flex items-center mb-4'>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

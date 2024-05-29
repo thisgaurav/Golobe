@@ -26,7 +26,7 @@ function Home() {
                 <div>
                   <a
                     className="flex gap-2 typo items-center text-center"
-                    href=""
+                    href="/flight-search"
                   >
                     <img src="./images/airplaneWhite.png" />
                     <p>Find Flight</p>
@@ -34,7 +34,7 @@ function Home() {
                 </div>
                 <div>
                   <a
-                    href=""
+                    href="/hotel-search"
                     className="flex gap-2 items-center text-center typo"
                   >
                     <img src="./images/ion_bedWhite.png" />
@@ -43,13 +43,13 @@ function Home() {
                 </div>
               </div>
               <div className="flex items-center justify-center mt-3">
-                <img src="./images/WhiteLogo.png" alt="logo" />
+                <a href="/"><img src="./images/WhiteLogo.png" alt="logo" /></a>
               </div>
               <div className="flex gap-10 text-white">
-                <button className="typo">Login</button>
-                <button className="typo bg-white text-black rounded-xl p-4">
+                <button><a href="/login" className="typo">Login</a></button>
+                <a href="/sign-up" className="typo bg-white text-black rounded-xl p-4">
                   Sign-Up
-                </button>
+                </a>
               </div>
             </nav>
           </div>
@@ -68,14 +68,14 @@ function Home() {
         <div className="flex absolute left-[185px] top-[55vh] z-[999] flex-col gap-3 bg-[#fff] w-[80%] rounded-xl shadow-[0_4px_16px_0px_rgba(141,211,187,0.15)] p-6">
           <div className="flex gap-2 py-4 px-9">
             <div className="border-r-[2px] pr-4 border-[#D7E2EE]">
-              <a className="flex gap-2 typo items-center text-center" href="">
+              <a className="flex gap-2 typo items-center text-center" href="/flight-search">
                 <img src="./images/airplane.png" />
                 <p>Find Flight</p>
               </a>
             </div>
             <div>
               <a
-                href=""
+                href="/hotel-search"
                 className="flex gap-2 items-center pl-2 text-center typo"
               >
                 <img src="./images/ion_bed.png" />
