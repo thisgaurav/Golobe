@@ -73,7 +73,7 @@ function FlightSearch() {
               <div className="-rotate-45">
                 <IoSend />
               </div>
-              <button>Show Filghts</button>
+             <a href="/flight-list"><button>Show Filghts</button></a> 
             </div>
           </div>
         </div>
