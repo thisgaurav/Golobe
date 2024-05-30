@@ -20,6 +20,8 @@ import HotelDescription from './components/HotelDescription'
 import Account from './components/Account'
 import AccountHistory from './components/AccountHistory'
 import AccountPayment from './components/AccountPayment'
+import HotelTicketDetails from './components/HotelTicketDetails'
+import StaysAccountHistory from './components/StaysAccountHistory'
 function App() {
 
   return (
@@ -34,6 +36,7 @@ function App() {
         <Route path='/hotel-listing' element={<HotelListing/>}/>
         <Route path='/favorites' element={<Favorites/>}/>
         <Route path='/ticket-details' element={<TicketDetails/>}/>
+        <Route path='/hotel-ticket-details' element={<HotelTicketDetails/>}/>
         <Route path='/login' element={<LoginForm/>}/>
         <Route path='/sign-up' element={<SignUp/>}/>
         <Route path='/forgot-password' element={<ForgotPassword/>}/>
@@ -43,6 +46,7 @@ function App() {
         <Route path='/Hotel-description' element={<HotelDescription/>}/>
         <Route path='/account' element={<Account/>}/>
         <Route path='/account-history' element={<AccountHistory/>}/>
+        <Route path='/stays-account-history' element={<StaysAccountHistory/>}/>
         <Route path='/account-payment' element={<AccountPayment/>}/>
       </Routes>
       <Footer/>
