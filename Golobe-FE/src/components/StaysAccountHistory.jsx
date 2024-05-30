@@ -1,7 +1,7 @@
 import React from "react";
 import Profile from "./Profile";
 
-function AccountHistory() {
+function StaysAccountHistory() {
   return (
     <div className="bg-[#FAFBFC]">
       <div className="flex justify-center sticky top-0 bg-white z-[9999]">
@@ -21,7 +21,7 @@ function AccountHistory() {
             </div>
           </div>
           <div className="flex items-center justify-center mt-3">
-            <a href="/"><img src="./images/logo-black.png" alt="logo" /></a>
+           <a href="/"><img src="./images/logo-black.png" alt="logo" /></a> 
           </div>
           <div className="flex gap-10">
             <div className="flex gap-5 items-center">
@@ -52,7 +52,7 @@ function AccountHistory() {
           </div>
         </div>
         <div className="flex gap-10 w-full p-3 shadow-[0px_4px_16px_0px_rgba(17,34,17,0.05)] rounded-2xl">
-        <div className="w-[50%] border-r-[2px] p-2 ">
+          <div className="w-[50%] border-r-[2px] p-2 ">
             <a href="/account-history" className="flex gap-2 items-center">
             <img src="./images/airplane.png" alt="" />
             <h1 className="font-semibold">Flights</h1>
@@ -71,22 +71,22 @@ function AccountHistory() {
               <div className="flex gap-8 w-[25%]">
                 <div className="">
                   <img
-                    src="./images/Emirates-logo.png"
+                    src="./images/hotellogo.png"
                     className="h-[80px] w-[80px]"
                     alt=""
                   />
                 </div>
                 <div className="flex items-center gap-4 border-r-[1px] pr-6">
                   <div>
-                    <p>Newark(EWR)</p>
-                    <p className="font-semibold">12:00pm</p>
+                    <p>Check-In</p>
+                    <p className="font-semibold">Thur, Dec 8</p>
                   </div>
                   <div>
                     <p className="font-semibold">—</p>
                   </div>
                   <div>
-                    <p>Newark(EWR)</p>
-                    <p className="font-semibold">12:00pm</p>
+                    <p>Check Out</p>
+                    <p className="font-semibold">Fri, Dec 9</p>
                   </div>
                 </div>
               </div>
@@ -94,11 +94,11 @@ function AccountHistory() {
                 <div className="flex">
                   <div className="flex items-center gap-2 pr-24">
                   <div className="py-[5.5px] px-[5px] rounded-md bg-[#EBF6F2]">
-                    <img src="./images/calendar.png" alt="" />
+                    <img src="./images/timmer.png" alt="" />
                   </div>
                   <div className="leading-4">
-                    <p className="text-[#707a70]">Date</p>
-                    <p className="font-semibold">12-11-22</p>
+                    <p className="text-[#707a70]">Check-In time</p>
+                    <p className="font-semibold">12:00pm</p>
                   </div>
                   </div>
                   <div>
@@ -107,8 +107,8 @@ function AccountHistory() {
                       <img src="./images/bi_door-closed-fill.png" alt="" />
                     </div>
                     <div className="leading-4">
-                      <p className="text-[#707a70]">Gate</p>
-                      <p className="font-semibold">A12</p>
+                      <p className="text-[#707a70]">Room no.</p>
+                      <p className="font-semibold">On arrival</p>
                     </div>
                   </div>
                   </div>
@@ -121,18 +121,8 @@ function AccountHistory() {
                       <img src="./images/timmer.png" alt="" />
                     </div>
                     <div className="leading-4">
-                      <p className="text-[#707a70]">Flight Time</p>
-                      <p className="font-semibold">Newark(EWR)</p>
-                    </div>
-                    </div>
-        
-                    <div className="flex gap-2 pl-10">
-                    <div className="py-[5.5px] px-[5px] rounded-md bg-[#EBF6F2]">
-                      <img src="./images/Green-seat.png" alt="" />
-                    </div>
-                    <div className="leading-4">
-                      <p className="text-[#707a70]">Seat No.</p>
-                      <p className="font-semibold">128</p>
+                      <p className="text-[#707a70]">Check-In out</p>
+                      <p className="font-semibold">11:30am</p>
                     </div>
                     </div>
                   </div>
@@ -151,22 +141,22 @@ function AccountHistory() {
               <div className="flex gap-8 w-[25%]">
                 <div className="">
                   <img
-                    src="./images/Emirates-logo.png"
+                    src="./images/hotellogo.png"
                     className="h-[80px] w-[80px]"
                     alt=""
                   />
                 </div>
                 <div className="flex items-center gap-4 border-r-[1px] pr-6">
                   <div>
-                    <p>Newark(EWR)</p>
-                    <p className="font-semibold">12:00pm</p>
+                    <p>Check-In</p>
+                    <p className="font-semibold">Thur, Dec 8</p>
                   </div>
                   <div>
                     <p className="font-semibold">—</p>
                   </div>
                   <div>
-                    <p>Newark(EWR)</p>
-                    <p className="font-semibold">12:00pm</p>
+                    <p>Check Out</p>
+                    <p className="font-semibold">Fri, Dec 9</p>
                   </div>
                 </div>
               </div>
@@ -174,11 +164,11 @@ function AccountHistory() {
                 <div className="flex">
                   <div className="flex items-center gap-2 pr-24">
                   <div className="py-[5.5px] px-[5px] rounded-md bg-[#EBF6F2]">
-                    <img src="./images/calendar.png" alt="" />
+                    <img src="./images/timmer.png" alt="" />
                   </div>
                   <div className="leading-4">
-                    <p className="text-[#707a70]">Date</p>
-                    <p className="font-semibold">12-11-22</p>
+                    <p className="text-[#707a70]">Check-In time</p>
+                    <p className="font-semibold">12:00pm</p>
                   </div>
                   </div>
                   <div>
@@ -187,8 +177,8 @@ function AccountHistory() {
                       <img src="./images/bi_door-closed-fill.png" alt="" />
                     </div>
                     <div className="leading-4">
-                      <p className="text-[#707a70]">Gate</p>
-                      <p className="font-semibold">A12</p>
+                      <p className="text-[#707a70]">Room no.</p>
+                      <p className="font-semibold">On arrival</p>
                     </div>
                   </div>
                   </div>
@@ -201,18 +191,8 @@ function AccountHistory() {
                       <img src="./images/timmer.png" alt="" />
                     </div>
                     <div className="leading-4">
-                      <p className="text-[#707a70]">Flight Time</p>
-                      <p className="font-semibold">Newark(EWR)</p>
-                    </div>
-                    </div>
-        
-                    <div className="flex gap-2 pl-10">
-                    <div className="py-[5.5px] px-[5px] rounded-md bg-[#EBF6F2]">
-                      <img src="./images/Green-seat.png" alt="" />
-                    </div>
-                    <div className="leading-4">
-                      <p className="text-[#707a70]">Seat No.</p>
-                      <p className="font-semibold">128</p>
+                      <p className="text-[#707a70]">Check-In out</p>
+                      <p className="font-semibold">11:30am</p>
                     </div>
                     </div>
                   </div>
@@ -226,10 +206,11 @@ function AccountHistory() {
                 </div>
               </div>
             </div>   
+           
             </div>
       </section>
     </div>
   );
 }
 
-export default AccountHistory;
+export default StaysAccountHistory;
