@@ -1,7 +1,54 @@
-import React from 'react'
+import {useEffect, useState} from 'react'
 import Profile from './Profile'
+import axios from 'axios';
 
 function Account() {
+
+  const token = localStorage.getItem('token')
+  console.log(token);
+
+const [details, setDetails] = useState({})
+// const getDetails = ()=>{ 
+//   axios.post('http://localhost:8080/api/golobe/get-user').then(res => {
+
+//   headers: { Authorization: `${token}` }
+
+//     console.log(res.data);
+//     setDetails(res.data)
+//   }).catch(err => {
+//     console.log(err)
+//   })
+// }
+
+let data = '';
+
+useEffect(()=>{
+  let config = {
+    method: 'post',
+    maxBodyLength: Infinity,
+    url: 'http://localhost:8080/api/golobe/get-user',
+    headers: { 
+      'token': `Bearer ${token}`,
+    },
+    data : data
+  };
+  
+  axios.request(config)
+  .then((response) => {
+    console.log(JSON.stringify(response.data));
+    setDetails(response.data.user);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+  
+},[])
+ 
+
+
+
+console.log(details)
+
   return (
     <div className='bg-[#FAFBFC]'>
       <div className="flex justify-center sticky top-0 bg-white z-[9999]">
@@ -45,7 +92,7 @@ function Account() {
           <div className='flex items-center justify-between w-full'>
             <div>
               <p className='text-[16px] font-normal text-[#11221175]'>Name</p>
-              <h1 className='text-[20px] font-semibold'>John Doe</h1>
+              <h1 className='text-[20px] font-semibold'>{details.firstName +" "+ details.lastName}</h1>
             </div>
             <div>
               <button className='border-[1px] border-[#8DD3BB] py-2 px-4 flex items-center gap-2 rounded'>
@@ -57,7 +104,7 @@ function Account() {
           <div className='flex items-center justify-between w-full '>
             <div>
               <p className='text-[16px] font-normal text-[#11221175]'>Email</p>
-              <h1 className='text-[20px] font-semibold'>john.doe@gmail.com</h1>
+              <h1 className='text-[20px] font-semibold'>j{details.email}</h1>
             </div>
             <div className='flex gap-2'>
               <button className='border-[1px] border-[#8DD3BB] py-2 px-4 flex items-center gap-2 rounded'>
@@ -85,7 +132,7 @@ function Account() {
           <div className='flex items-center justify-between w-full'>
             <div>
               <p className='text-[16px] font-normal text-[#11221175]'>Phone number</p>
-              <h1 className='text-[20px] font-semibold'>+1 000-000-0000</h1>
+              <h1 className='text-[20px] font-semibold'>{details.phoneNumber}</h1>
             </div>
             <div>
               <button className='border-[1px] border-[#8DD3BB] py-2 px-4 flex items-center gap-2 rounded'>
