@@ -1,11 +1,34 @@
 import { Input } from "@material-tailwind/react";
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom'
 import SliderLogin from "./SliderLogin";
 import '../component-styles/styles.css'
 import 'react-toastify/dist/ReactToastify.css'; 
 import { ToastContainer, toast } from 'react-toastify';
 import axios from "axios";
 function LoginForm() {
+  let navigate = useNavigate();
+ const [stordUsers, setStoredUsers] = useState([]);
+
+  // useEffect(()=>{
+  //   let config = {
+  //     method: 'get',
+  //     maxBodyLength: Infinity,
+  //     url: 'http://localhost:8080/api/golobe',
+  //     headers: { }
+  //   };
+    
+  //   axios.request(config)
+  //   .then((response) => {
+  //     setStoredUsers(response.data);
+  //   })
+  //   .catch((error) => {
+  //     console.log(error);
+  //   });    
+  // },[])
+
+  const [isValidated, setIsValidated] = useState(false)
+
   const [user, setUser] = useState({
     email: "",
     password: ""
@@ -15,44 +38,64 @@ function LoginForm() {
     setUser({ ...user, [evt.target.name]: evt.target.value });
   }
 
-  const [storedUsers, setStoredUsers] = useState([]);
+    const handleValidation = () =>{
+   
+        if(user.email=="" || user.password==""){
+          toast.error("please fill both fields")
+          setIsValidated(false)
+        
+        }
+        
+        else if(user.password.length<8){
+          toast.error("Please enter more than or equal to 8 characters")
+          setIsValidated(false)
+        } 
+        else{
+          // toast.success('login su  ccessfull')
+          setIsValidated(true)
+          login()
+        //  navigate('/')
+      }
+        
+ 
 
-  const getUsers = async() =>{
-    let config = {
-      method: 'get',
-      maxBodyLength: Infinity,
-      url: 'http://localhost:8080/api/golobe',
-      headers: { }
-    };
-    
-    axios.request(config)
-    .then((response) => {
-      setStoredUsers(response.data);
-      console.log(storedUsers)
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  }
+    }
 
-    useEffect(()=>{
-    getUsers();
-  },[])
+    const login = ()=>{
+      let config = {
+        method: 'post',
+        maxBodyLength: Infinity,
+        url: 'http://localhost:8080/api/golobe/login',
+        headers: { 
+          'Content-Type': 'application/json'
+        },
+        data : user 
+      };     
+      
+      axios.request(config)
+      .then((response) => {
+        console.log(response.data)  
+        if(response.data.message == "user not found") {
+          toast.error(response.data.message)
+        }
+        else{
+          navigate("/") 
+        }
+      })
+      .catch((error) => {
+        console.log(error.data)
+        console.log(error);
+      });
+    }
 
   const isExist = (e) =>{
+
     e.preventDefault();
-    storedUsers.map((userObj) =>
-      { 
-      if(user.email !== userObj.email){
-        toast.error("User doesn't exist")
-      }
-      else if(user.password !== userObj.password){
-        toast.error("Incorrect Password")
-      }
-      else if(user.email === userObj.email && user.password === userObj.password){
-        toast.success("Successfully Logged In")
-      }
-    })
+  handleValidation();
+    
+    
+  
+      
   }
   return (
     <div className="typo overflow-x-hidden">
