@@ -81,7 +81,10 @@ server.post("/api/golobe/login", async (req, res) => {
     }
     const user = await User.findOne({ email });
     if (!user) {
-      res.status(401).send("User not found");
+      return res.status(200).json({
+        success: false,
+        message:"user not found"
+      });
     }
 
     if (user && (await bcrypt.compare(password, user.password))) {
