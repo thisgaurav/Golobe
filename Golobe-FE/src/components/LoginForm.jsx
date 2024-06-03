@@ -75,6 +75,8 @@ function LoginForm() {
       axios.request(config)
       .then((response) => {
         console.log(response.data)  
+        localStorage.setItem('token', JSON.stringify(response.data.token))
+        console.log(response.data.token);
         if(response.data.message == "user not found") {
           toast.error(response.data.message)
         }
