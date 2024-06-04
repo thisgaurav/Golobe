@@ -12,6 +12,7 @@ import {
   Rating,
 } from "@material-tailwind/react";
 import Footer from "./Footer";
+import Header from "./Header";
  
 
 function Home() {
@@ -30,39 +31,7 @@ function Home() {
       <section className="w-full p-6 h-screen">
         <div className="bg-[url('/images/BannerBG.jpeg')] bg-no-repeat relative rounded-3xl shrink-0 h-[600px] bg-center overflow-hidden">
           <div class="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-t from-black/40 via-black/50"></div>
-          <div className="flex justify-center mt-4 relative">
-            <nav className=" w-full flex px-20 py-6 justify-between items-center">
-              <div className="flex gap-9 text-white">
-                <div>
-                  <a
-                    className="flex gap-2 typo items-center text-center"
-                    href="/flight-search"
-                  >
-                    <img src="./images/airplaneWhite.png" />
-                    <p>Find Flight</p>
-                  </a>
-                </div>
-                <div>
-                  <a
-                    href="/hotel-search"
-                    className="flex gap-2 items-center text-center typo"
-                  >
-                    <img src="./images/ion_bedWhite.png" />
-                    <p>Find Stays</p>
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-center justify-center mt-3">
-                <a href="/"><img src="./images/WhiteLogo.png" alt="logo" /></a>
-              </div>
-              <div className="flex gap-10 text-white">
-                <button><a href="/login" className="typo">Login</a></button>
-                <a href="/sign-up" className="typo bg-white text-black rounded-xl p-4">
-                  Sign-Up
-                </a>
-              </div>
-            </nav>
-          </div>
+          <Header/>
           <div className="flex flex-col text-white items-center p-20 font-['Trade_Gothic_LT_Std'] font-normal relative">
             <div className="text-[45px] font-semibold">
               <h2>Helping Others</h2>

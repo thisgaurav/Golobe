@@ -1,42 +1,10 @@
 import React from "react";
+import Header from "./Header";
 
 function TicketDetails() {
   return (
     <div>
-      <div className="flex justify-center sticky top-0 bg-white z-[9999]">
-        <nav className=" w-full flex px-20 py-6 justify-between items-center">
-          <div className="flex gap-9">
-            <div>
-              <a className="flex gap-2 typo items-center text-center" href="/flight-search">
-                <img src="./images/airplane.png" />
-                <p>Find Flight</p>
-              </a>
-            </div>
-            <div>
-              <a href="/hotel-search" className="flex gap-2 items-center text-center typo">
-                <img src="./images/ion_bed.png" />
-                <p>Find Stays</p>
-              </a>
-            </div>
-          </div>
-          <div className="flex items-center justify-center mt-3">
-            <img src="./images/logo-black.png" alt="logo" />
-          </div>
-          <div className="flex gap-10">
-            <div className="flex gap-5 items-center">
-              <a href="/favorites" className="border-r-[3px] border-[#000] pr-4">
-                <img src="./images/Favorite.png" alt="" />
-              </a>
-              <div>
-                <a href="/account" className="flex gap-2 items-center">
-                  <img src="./images/Profile.png" alt="" />
-                  <p className="typo">John D.</p>
-                </a>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </div>
+      <Header/>
       <section className='font-["Montserrat"] mx-32'>
         <div className="flex gap-2 my-10 font-normal">
           <span className="font-semibold">Turkey</span>
