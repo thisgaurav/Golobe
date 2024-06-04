@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Profile() {
+function Profile(props) {
   return (
     <div>
       <div className='mb-44 relative flex justify-center items-end'>
@@ -17,8 +17,8 @@ function Profile() {
           <img className='w-[150px] h-[150px] border-[3px] border-[#FF8682] rounded-full' src="./images/Ellipse2.jpg" alt="" />
         </div>
         <div className='text-center'>
-          <h1 className='text-[24px] font-semibold '>John Doe.</h1>
-          <p className='text-[16px] font-normal'>john.doe@gmail.com</p>
+          <h1 className='text-[24px] font-semibold '>{props.name}</h1>
+          <p className='text-[16px] font-normal'>{props.email}</p>
         </div>
         </div>
       </div>
