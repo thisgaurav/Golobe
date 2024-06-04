@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import "../component-styles/styles.css";
 import { LuPlus } from "react-icons/lu";
 import { IoSend } from "react-icons/io5";
@@ -15,6 +15,16 @@ import Footer from "./Footer";
  
 
 function Home() {
+  const [input1, setInput1] = useState('');
+  const [input2, setInput2] = useState('');
+
+  const handleSwap = () => {
+    // Swap the values of input1 and input2
+    const temp = input1;
+    setInput1(input2);
+    setInput2(temp);
+  };
+
   return (
     <>
       <section className="w-full p-6 h-screen">
@@ -83,41 +93,48 @@ function Home() {
               </a>
             </div>
           </div>
-          <div className="flex gap-5 items-center justify-center pt-6 font-['Montserrat']">
-            <div class="w-[20vw]">
+          <div className="flex items-center  font-['Montserrat'] mx-10 ">
+              <div class="w-[20vw] flex gap-2 items-center">
               <Input
                 variant="outlined"
-                value="Lahore-Karachi"
-                label="From-To"
-                className="rounded-md h-14"
+                label="From"
+                className="h-16" 
+                value={input1}
+                onChange={(e) => setInput1(e.target.value)}
               />
-              <button className="absolute -mt-8 ml-80">
-                <IoSwapHorizontal className="h-10 w-10 " />
+              <div className="flex mt-4">
+              <button onClick={handleSwap} className="rounded-md bg-gray-100">
+                <IoSwapHorizontal className="h-8 w-8 " />
               </button>
-            </div>
-            <div className="w-[10vw]">
-              <Select label="Select Version" className="h-14 rounded-md">
-                <Option>Material Tailwind HTML</Option>
-                <Option>Material Tailwind React</Option>
-                <Option>Material Tailwind Vue</Option>
-                <Option>Material Tailwind Angular</Option>
-                <Option>Material Tailwind Svelte</Option>
+              </div>
+              <Input
+                variant="outlined"
+                label="To"
+                className="h-16"
+                value={input2}
+                onChange={(e) => setInput2(e.target.value)}
+              />
+              </div>
+            <div className="w-[14vw] ml-20">
+              <Select label="Trip" className=" rounded-md h-16">
+                <Option>Return</Option>
+                <Option>Depart</Option>
               </Select>
             </div>
-            <div className="w-[20vw]">
+            <div className="w-[15vw] ml-4">
               <Input
                 variant="outlined"
                 value="07 Nov 22 - 13 Nov 22"
                 label="Depart- Return"
-                className="h-14 rounded-md"
+                className="h-16 rounded-md"
               />
             </div>
-            <div className="w-[20vw]">
+            <div className="w-[20vw] ml-4">
               <Input
                 variant="outlined"
                 value="1 Passenger, Economy"
                 label="Passenger - Class"
-                className="rounded-md h-14"
+                className="rounded-md h-16"
               />
             </div>
           </div>

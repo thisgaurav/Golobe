@@ -1,16 +1,27 @@
-import React from "react";
+import React, {useState} from "react";
 import Header from "./Header";
+import { IoSwapHorizontal } from "react-icons/io5";
 import Footer from "./Footer";
 import "../component-styles/styles.css";
 import { Input, Select, Option } from "@material-tailwind/react";
 import { LuPlus } from "react-icons/lu";
 import { IoSend } from "react-icons/io5";
 function FlightSearch() {
+  const [input1, setInput1] = useState('');
+  const [input2, setInput2] = useState('');
+
+  const handleSwap = () => {
+    // Swap the values of input1 and input2
+    const temp = input1;
+    setInput1(input2);
+    setInput2(temp);
+  };
+
   return (
     <>
       <Header />
-      <section className="w-full h-screen ">
-        <div className="bg-[url('/images/flight-bg.jpeg')] bg-no-repeat bg-cover">
+      <section className="w-full h-[750px]">
+        <div className="bg-[url('/images/flight-bg.jpeg')] h-[550px] bg-no-repeat bg-cover">
           <div className="flex flex-col text-white w-[35%] p-20 pb-44">
             <div className="text-[45px]">
               <h2 className="typo text-5xl text-white">
@@ -25,42 +36,51 @@ function FlightSearch() {
           </div>
         </div>
       </section>
-      <div className="flight-box mb-80 w-[85%] bg-white p-6 shadow-[0px_4px_16px_0px_rgba(141,211,187,0.15)] absolute top-[500px] left-[125px] rounded-xl ">
+      <div className="flight-box w-[80%] bg-white p-6 shadow-[0px_4px_16px_0px_rgba(141,211,187,0.15)] absolute top-[550px] left-[185px] rounded-xl ">
         <div className="flex flex-col gap-4">
-          <h1 className="text-2xl typo">Where are you flying?</h1>
-          <div className="flex gap-5 items-center justify-center pt-6">
-            <div class="h-10 w-[20vw]">
+          <h1 className="text-2xl typo ml-10">Where are you flying?</h1>
+          <div className="flex items-center  font-['Montserrat'] mx-10 ">
+              <div class="w-[20vw] flex gap-2 items-center">
               <Input
                 variant="outlined"
-                value="Lahore-Karachi"
-                label="From-To"
-                className="h-14 rounded-md"
+                label="From"
+                className="h-16" 
+                value={input1}
+                onChange={(e) => setInput1(e.target.value)}
               />
-            </div>
-            <div className="h-10 w-[10vw]">
-              <Select
+              <div className="flex mt-4">
+              <button onClick={handleSwap} className="rounded-md bg-gray-100">
+                <IoSwapHorizontal className="h-8 w-8 " />
+              </button>
+              </div>
+              <Input
                 variant="outlined"
-                label="Trip"
-                className="h-14 rounded-md"
-              >
-                <Option>Depart</Option>
+                label="To"
+                className="h-16"
+                value={input2}
+                onChange={(e) => setInput2(e.target.value)}
+              />
+              </div>
+            <div className="w-[14vw] ml-20">
+              <Select label="Trip" className=" rounded-md h-16">
                 <Option>Return</Option>
+                <Option>Depart</Option>
               </Select>
             </div>
-            <div className="h-10 w-[20vw]">
+            <div className="w-[15vw] ml-4">
               <Input
                 variant="outlined"
-                label="Depart-Return"
-                className="h-14 rounded-md"
                 value="07 Nov 22 - 13 Nov 22"
+                label="Depart- Return"
+                className="h-16 rounded-md"
               />
             </div>
-            <div className="h-10 w-[20vw]">
+            <div className="w-[20vw] ml-4">
               <Input
                 variant="outlined"
-                label="Passenger-class"
-                className="h-14 rounded-md"
                 value="1 Passenger, Economy"
+                label="Passenger - Class"
+                className="rounded-md h-16"
               />
             </div>
           </div>
@@ -79,21 +99,22 @@ function FlightSearch() {
         </div>
       </div>
       <div>
-        <section>
-          <div className="flex justify-around my-10">
-            <div className="flex flex-col gap-5">
-              <h1 className="font-bold text-3xl">Let's go places together</h1>
-              <p className="typo font-normal">
-                Discover the latest offers and news and start planning your next
-                trip with us.
-              </p>
-            </div>
-            <div>
-              <button className="border-[#8DD3BB] border-[2px] px-[16px] py-[8px] rounded-md">
-                See All
-              </button>
-            </div>
+        <section className="w-full mb-20 mt-20">
+        <div className="font-['Montserrat'] flex justify-evenly gap-[40rem]">
+          <div className="flex flex-col gap-[16px]">
+            <h1 className="text-[32px] font-semibold">
+            Let's go places together
+            </h1>
+            <p className="text-[16px] font-normal">
+            Discover the latest offers and news and start planning your next trip with us.
+            </p>
           </div>
+          <div className="">
+            <button className="border-[2px] border-[#8DD3BB] p-4 font-semibold rounded-md">
+              See All
+            </button>
+          </div>
+        </div>
           <div>
             <div className="w-full mt-5">
               <img className="w-full" src="./images/Frame.png" alt="" />
@@ -101,25 +122,26 @@ function FlightSearch() {
           </div>
         </section>
 
-        <section className="">
-          <div className="flex items-center justify-around my-10 mx-24">
-            <div className="flex flex-col gap-5">
-              <h1 className="font-bold text-3xl">Fall into travel</h1>
-              <p className="typo font-normal">
-                Going somewhere to celebrate this season? Whether you’re going
-                home or somewhere to roam, we’ve got the travel tools to get you
-                to your destination.
-              </p>
-            </div>
-            <div>
-              <button className="border-[#8DD3BB] border-[2px] px-[16px] py-[8px] rounded-md">
-                See All
-              </button>
-            </div>
+        <section className="w-full">
+        <div className="font-['Montserrat'] flex justify-evenly ">
+          <div className="flex flex-col gap-[16px]">
+            <h1 className="text-[32px] font-semibold">
+            Fall into travel
+
+            </h1>
+            <p className="text-[16px] font-normal">
+            Going somewhere to celebrate this season? Whether you’re going home or somewhere to roam, we’ve got the travel tools to get you to your destination.
+            </p>
           </div>
-          <div className="mx-24 flex gap-5 justify-center">
+          <div className="">
+            <button className="border-[2px] border-[#8DD3BB] p-4 font-semibold rounded-md">
+              See All
+            </button>
+          </div>
+        </div>
+          <div className="mx-24 flex gap-8 justify-center mt-10">
             
-            <div className="relative grid h-[420px] w-[296px] max-w-[28rem] flex-col items-end overflow-hidden rounded-xl bg-white bg-clip-border">
+            <div className="relative grid h-[420px] w-[350px] max-w-[28rem] flex-col items-end overflow-hidden rounded-xl bg-white bg-clip-border">
               <div className="absolute inset-0 m-0 h-full w-full overflow-hidden rounded-none bg-transparent bg-[url('./images/Melbourne.jpeg')] bg-cover bg-clip-border bg-center shadow-none">
               </div>
               <div className="relative">
@@ -142,7 +164,7 @@ function FlightSearch() {
               </div>
             </div>
 
-            <div className="relative grid h-[420px] w-[296px] max-w-[28rem] flex-col items-end overflow-hidden rounded-xl bg-white bg-clip-border">
+            <div className="relative grid h-[420px] w-[350px] max-w-[28rem] flex-col items-end overflow-hidden rounded-xl bg-white bg-clip-border">
               <div className="absolute inset-0 m-0 h-full w-full overflow-hidden rounded-none bg-transparent bg-[url('./images/Paris.jpeg')] bg-cover bg-clip-border bg-center shadow-none">
               </div>
               <div className="relative">
@@ -165,7 +187,7 @@ function FlightSearch() {
               </div>
             </div>
 
-            <div className="relative grid h-[420px] w-[296px] max-w-[28rem] flex-col items-end overflow-hidden rounded-xl bg-white bg-clip-border">
+            <div className="relative grid h-[420px] w-[350px] max-w-[28rem] flex-col items-end overflow-hidden rounded-xl bg-white bg-clip-border">
               <div className="absolute inset-0 m-0 h-full w-full overflow-hidden rounded-none bg-transparent bg-[url('./images/London.jpeg')] bg-cover bg-clip-border bg-center shadow-none">
               </div>
               <div className="relative">
@@ -188,7 +210,7 @@ function FlightSearch() {
               </div>
             </div>
 
-            <div className="relative grid h-[420px] w-[296px] max-w-[28rem] flex-col items-end overflow-hidden rounded-xl bg-white bg-clip-border">
+            <div className="relative grid h-[420px] w-[350px] max-w-[28rem] flex-col items-end overflow-hidden rounded-xl bg-white bg-clip-border">
               <div className="absolute inset-0 m-0 h-full w-full overflow-hidden rounded-none bg-transparent bg-[url('./images/Columbia.jpeg')] bg-cover bg-clip-border bg-center shadow-none">
               </div>
               <div className="relative">
@@ -213,20 +235,25 @@ function FlightSearch() {
           
         </section>
 
-        <section>
-          <div className="flex items-center justify-around my-10 mx-24">
-              <div className="flex flex-col gap-5">
-                <h1 className="font-bold text-3xl">Fall into travel</h1>
-                <p className="typo font-normal">Going somewhere to celebrate this season? Whether you’re going home or somewhere to roam, we’ve got the travel tools to get you to your destination.</p>
-              </div>
-              <div>
-              <button className="border-[#8DD3BB] border-[2px] px-[16px] py-[8px] rounded-md">
-                See All
-              </button>
-              </div>
+        <section className="mt-20 overflow-x-hidden">
+        <div className="font-['Montserrat'] flex justify-evenly ">
+          <div className="flex flex-col gap-[16px]">
+            <h1 className="text-[32px] font-semibold">
+            Fall into travel
+
+            </h1>
+            <p className="text-[16px] font-normal">
+            Going somewhere to celebrate this season? Whether you’re going home or somewhere to roam, we’ve got the travel tools to get you to your destination.
+            </p>
           </div>
-          <div className="mx-28 flex gap-5 justify-center">
-            <div className="bg-[#8DD3BB] w-[552px] h-[424px] p-5 rounded-xl">
+          <div className="">
+            <button className="border-[2px] border-[#8DD3BB] p-4 font-semibold rounded-md">
+              See All
+            </button>
+          </div>
+        </div>
+          <div className="flex gap-5 justify-center mt-6 w-[100%] ml-32 ">
+            <div className="bg-[#8DD3BB] w-[43%] h-[424px] p-5 rounded-xl">
            <div className="flex flex-col gap-32">
            <div className="flex flex-col gap-10">
            <div className="flex justify-between">
@@ -248,7 +275,7 @@ function FlightSearch() {
            </div>
            
             </div>
-            <div className="flex flex-wrap gap-5 w-[656px] h-[200px]">
+            <div className="flex flex-wrap gap-5 w-[48%] h-[200px]">
               <div>
                 <img src="./images/1.png" alt="" />
               </div>

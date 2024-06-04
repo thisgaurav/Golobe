@@ -54,7 +54,7 @@ function SignUp() {
     else{
       setIsSame(true);
       saveUser();
-      navigate('/payment');
+      navigate('/login');
       toast.success("User registered successfully");
     }
   }
