@@ -1,13 +1,18 @@
 import {useEffect, useState} from 'react'
 import Profile from './Profile'
 import axios from 'axios';
-
+import {useNavigate} from 'react-router-dom'
 function Account() {
-
+const navigate = useNavigate()
   let token = localStorage.getItem('token')
   token=token.replace(/"/g, '')
 
 const [details, setDetails] = useState({})
+
+const handleLogout = ()=>{
+  localStorage.removeItem('token');
+  navigate('/login')
+}
 
 useEffect(()=>{
   let config = {
@@ -153,6 +158,9 @@ console.log(details)
               </button>
             </div>
           </div>
+        </div>
+        <div className='w-full flex justify-center items-center my-10'>
+          <button className='border-[1px] border-[#8DD3BB] py-2 px-4 flex justify-center w-[50%] items-center gap-2 rounded' onClick={handleLogout}>Logout</button>
         </div>
       </section>
     </div>
