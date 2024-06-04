@@ -27,6 +27,11 @@ const userSchema = new mongoose.Schema({
 //model creation in mongodb
 const User = mongoose.model("User", userSchema);
 
+// const corsOpts = {
+//   origin: "*",
+//   header: "Authorization"
+// }
+
 //creating server with express
 const server = express();
 server.use(cors());
@@ -114,7 +119,7 @@ server.post("/api/golobe/login", async (req, res) => {
 
 
 //Getting logged in user details using POST: 'api/golobe/getUser'. Login required
-server.post('/api/golobe/get-user',fetchUser, async(req,res)=>{
+server.get('/api/golobe/get-user',fetchUser, async(req,res)=>{
 
   try {
     const userId = req.user;

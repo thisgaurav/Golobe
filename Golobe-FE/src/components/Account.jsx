@@ -4,39 +4,26 @@ import axios from 'axios';
 
 function Account() {
 
-  const token = localStorage.getItem('token')
-  console.log(token);
+  let token = localStorage.getItem('token')
+  token=token.replace(/"/g, '')
 
 const [details, setDetails] = useState({})
-// const getDetails = ()=>{ 
-//   axios.post('http://localhost:8080/api/golobe/get-user').then(res => {
-
-//   headers: { Authorization: `${token}` }
-
-//     console.log(res.data);
-//     setDetails(res.data)
-//   }).catch(err => {
-//     console.log(err)
-//   })
-// }
-
-let data = '';
 
 useEffect(()=>{
   let config = {
-    method: 'post',
+    method: 'get',
     maxBodyLength: Infinity,
     url: 'http://localhost:8080/api/golobe/get-user',
     headers: { 
-      'token': `Bearer ${token}`,
+      'Authorization': `Bearer ${token}`,
     },
-    data : data
   };
   
   axios.request(config)
   .then((response) => {
     console.log(JSON.stringify(response.data));
     setDetails(response.data.user);
+    console.log(response.data.user+"jjjjjjjjjjjjjjjjjj")
   })
   .catch((error) => {
     console.log(error);
@@ -78,7 +65,7 @@ console.log(details)
               <div>
                 <a href="" className="flex gap-2 items-center">
                   <img src="./images/Profile.png" alt="" />
-                  <p className="typo">John D.</p>
+                  <p className="typo">{details.firstName+" "+details.lastName }</p>
                 </a>
               </div>
             </div>
@@ -86,7 +73,8 @@ console.log(details)
         </nav>
       </div>
       <section className='font-["Montserrat"] mx-32 mt-12'>
-        <Profile/>
+        <Profile name={details.firstName+" "+details.lastName }
+         email={details.email}/>
         <h1 className='font-bold text-[32px] font-["Trade_Gothic_LT_Std"] mb-4'>Account</h1>
         <div className="flex flex-col gap-8 w-full py-8 px-6 shadow-[0px_4px_16px_0px_rgba(17,34,17,0.05)] font-['Montserrat'] rounded-2xl">
           <div className='flex items-center justify-between w-full'>
@@ -104,7 +92,7 @@ console.log(details)
           <div className='flex items-center justify-between w-full '>
             <div>
               <p className='text-[16px] font-normal text-[#11221175]'>Email</p>
-              <h1 className='text-[20px] font-semibold'>j{details.email}</h1>
+              <h1 className='text-[20px] font-semibold'>{details.email}</h1>
             </div>
             <div className='flex gap-2'>
               <button className='border-[1px] border-[#8DD3BB] py-2 px-4 flex items-center gap-2 rounded'>
