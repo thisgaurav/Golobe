@@ -36,7 +36,7 @@ useEffect(()=>{
   
 },[])
  
-
+  
 
 
 console.log(details)
@@ -69,7 +69,7 @@ console.log(details)
               </a>
               <div>
                 <a href="" className="flex gap-2 items-center">
-                  <img src="./images/Profile.png" alt="" />
+                  <img src={details.profilePicture} alt="" />
                   <p className="typo">{details.firstName+" "+details.lastName }</p>
                 </a>
               </div>
@@ -79,7 +79,7 @@ console.log(details)
       </div>
       <section className='font-["Montserrat"] mx-32 mt-12'>
         <Profile name={details.firstName+" "+details.lastName }
-         email={details.email}/>
+         email={details.email} image={details.profilePicture}/>
         <h1 className='font-bold text-[32px] font-["Trade_Gothic_LT_Std"] mb-4'>Account</h1>
         <div className="flex flex-col gap-8 w-full py-8 px-6 shadow-[0px_4px_16px_0px_rgba(17,34,17,0.05)] font-['Montserrat'] rounded-2xl">
           <div className='flex items-center justify-between w-full'>
@@ -137,7 +137,7 @@ console.log(details)
           <div className='flex items-center justify-between w-full'>
             <div>
               <p className='text-[16px] font-normal text-[#11221175]'>Address</p>
-              <h1 className='text-[20px] font-semibold'>St 32 main downtown, Los Angeles, California, USA</h1>
+              <h1 className='text-[20px] font-semibold'>{details.address}</h1>
             </div>
             <div>
               <button className='border-[1px] border-[#8DD3BB] py-2 px-4 flex items-center gap-2 rounded'>
@@ -149,7 +149,7 @@ console.log(details)
           <div className='flex items-center justify-between w-full'>
             <div>
               <p className='text-[16px] font-normal text-[#11221175]'>Date of birth</p>
-              <h1 className='text-[20px] font-semibold'>01-01-1992</h1>
+              <h1 className='text-[20px] font-semibold'>{details.dateOfBirth}</h1>
             </div>
             <div>
               <button className='border-[1px] border-[#8DD3BB] py-2 px-4 flex items-center gap-2 rounded'>

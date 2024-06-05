@@ -14,7 +14,7 @@ function Profile(props) {
       </div>
       <div className='flex flex-col justify-center items-center absolute top-[280px] z-[999] gap-5'>
         <div>
-          <img className='w-[150px] h-[150px] border-[3px] border-[#FF8682] rounded-full' src="./images/Ellipse2.jpg" alt="" />
+          <img className='w-[150px] h-[150px] border-[3px] border-[#FF8682] rounded-full' src={props.image} alt="" />
         </div>
         <div className='text-center'>
           <h1 className='text-[24px] font-semibold '>{props.name}</h1>

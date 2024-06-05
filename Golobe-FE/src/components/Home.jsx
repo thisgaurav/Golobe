@@ -30,7 +30,7 @@ function Home() {
     <>
       <section className="w-full p-6 h-screen">
         <div className="bg-[url('/images/BannerBG.jpeg')] bg-no-repeat relative rounded-3xl shrink-0 h-[600px] bg-center overflow-hidden">
-          <div class="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-t from-black/40 via-black/50"></div>
+          <div className="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-t from-black/40 via-black/50"></div>
           <Header/>
           <div className="flex flex-col text-white items-center p-20 font-['Trade_Gothic_LT_Std'] font-normal relative">
             <div className="text-[45px] font-semibold">
@@ -63,7 +63,7 @@ function Home() {
             </div>
           </div>
           <div className="flex items-center  font-['Montserrat'] mx-10 ">
-              <div class="w-[20vw] flex gap-2 items-center">
+              <div className="w-[20vw] flex gap-2 items-center">
               <Input
                 variant="outlined"
                 label="From"
@@ -226,7 +226,7 @@ function Home() {
       <div className="relative grid h-[559px] w-[40%] flex-col items-end overflow-hidden rounded-3xl bg-white bg-clip-border">
               <div className="absolute inset-0 m-0 h-full w-full overflow-hidden rounded-none bg-transparent bg-[url('./images/flight.png')] bg-cover bg-clip-border bg-center shadow-none"> 
               </div>
-              <div class="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-t from-black/40 via-black/50"></div>
+              <div className="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-t from-black/40 via-black/50"></div>
               <div className="relative">
                 <div className="flex flex-col justify-center gap-5">
                 <div className="flex justify-evenly items-end">
@@ -244,7 +244,7 @@ function Home() {
       <div className="relative grid h-[559px] w-[40%] flex-col items-end overflow-hidden rounded-3xl bg-white bg-clip-border">
               <div className="absolute inset-0 m-0 h-full w-full overflow-hidden rounded-none bg-transparent bg-[url('./images/hotel.png')] bg-cover bg-clip-border bg-center shadow-none">
               </div>
-              <div class="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-t from-black/40 via-black/50"></div>
+              <div className="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-t from-black/40 via-black/50"></div>
               <div className="relative">
                 <div className="flex flex-col justify-center gap-5 ">
                 <div className="flex justify-evenly items-end">

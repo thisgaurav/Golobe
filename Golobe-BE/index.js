@@ -6,6 +6,7 @@ import jsonwebtoken from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import cookieParser from "cookie-parser";
 import fetchUser from './middlewares/fetchUser.js'
+import multer from "multer";
 
 //Connection to database
 async function main() {
@@ -22,10 +23,31 @@ const userSchema = new mongoose.Schema({
   email: String,
   phoneNumber: String,
   password: String,
+  address: String,
+  dateOfBirth: Date, // Store date of birth as a Date object
+  profilePicture: {
+    type: String, // Store the path to the uploaded profile picture
+    default: "",
+  },
 });
 
 //model creation in mongodb
 const User = mongoose.model("User", userSchema);
+
+
+// Configure Multer for file uploads (adjust storage options as needed)
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "./uploads"); // Change upload directory if necessary
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now();
+    cb(null, file.fieldname + "-" + uniqueSuffix + "." + file.originalname.split('.').pop());
+  },
+});
+
+const upload = multer({ storage });
+
 
 // const corsOpts = {
 //   origin: "*",
@@ -37,11 +59,12 @@ const server = express();
 server.use(cors());
 server.use(bodyParser.json());
 server.use(cookieParser());
+server.use('/uploads', express.static('uploads'))
 
 //getting data from frontend and assigning it to user model's variables
-server.post("/api/golobe", async (req, res) => {
+server.post("/api/golobe", upload.single("profilePicture"), async (req, res) => {
   try {
-    let { firstName, lastName, email, password, phoneNumber } = req.body;
+    let { firstName, lastName, email, password, phoneNumber, address, dateOfBirth } = req.body;
     if (!(firstName && lastName && email && password && phoneNumber)) {
       res.status(400).send("All fields are required");
     }
@@ -52,12 +75,23 @@ server.post("/api/golobe", async (req, res) => {
 
     const myEncPassword = await bcrypt.hash(password, 10);
 
+
+    // Handle potential upload errors
+    if (req.fileValidationError) {
+      return res.status(400).send(req.fileValidationError);
+    } else if (!req.file) {
+      return res.status(400).send("Please select a profile picture");
+    }
+
     let user = await User.create({
       firstName,
       lastName,
       email,
       password: myEncPassword,
       phoneNumber,
+      address,
+      dateOfBirth: new Date(dateOfBirth), // Parse date string to Date object
+      profilePicture: `http://localhost:8080/${req.file.path}`,
     });
 
     const jwt = jsonwebtoken;
