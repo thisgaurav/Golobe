@@ -59,7 +59,7 @@ function Header() {
               </a>
               <div>
                 <a href="/account" className="flex gap-2 items-center">
-                  <img src="./images/Profile.png" alt="" />
+                  <img src={details.profilePicture} alt="" />
                   <p className="typo">{details.firstName} {details.lastName}</p>
                 </a>
               </div>
