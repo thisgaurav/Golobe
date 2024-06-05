@@ -36,7 +36,7 @@ useEffect(()=>{
   
 },[])
 
-let date = ((details.dateOfBirth).split('T')[0])
+let date = details.dateOfBirth ? details.dateOfBirth.split("T")[0] : 'N/A';
 console.log(date)
  
   
