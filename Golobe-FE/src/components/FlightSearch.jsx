@@ -48,7 +48,7 @@ function FlightSearch() {
                 value={input1}
                 onChange={(e) => setInput1(e.target.value)}
               />
-              <div className="flex mt-4">
+              <div className="flex">
               <button onClick={handleSwap} className="rounded-md bg-gray-100">
                 <IoSwapHorizontal className="h-8 w-8 " />
               </button>
@@ -62,7 +62,7 @@ function FlightSearch() {
               />
               </div>
             <div className="w-[14vw] ml-20">
-              <Select label="Trip" className=" rounded-md h-16">
+              <Select label="Trip" className=" rounded-md">
                 <Option>Return</Option>
                 <Option>Depart</Option>
               </Select>
