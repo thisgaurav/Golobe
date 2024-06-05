@@ -25,7 +25,7 @@ function FlightListing() {
               <Select
                 variant="outlined"
                 label="Trip"
-                className="h-14 rounded-md"
+                className="rounded-md"
               >
                 <Option>Depart</Option>
                 <Option>Return</Option>
@@ -43,7 +43,7 @@ function FlightListing() {
               <Input
                 variant="outlined"
                 label="Passenger-class"
-                className="h-14 rounded-md"
+                className="rounded-md"
                 value="1 Passenger, Economy"
               />
             </div>

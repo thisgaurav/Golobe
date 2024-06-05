@@ -67,11 +67,11 @@ function Home() {
               <Input
                 variant="outlined"
                 label="From"
-                className="h-16" 
+                className="" 
                 value={input1}
                 onChange={(e) => setInput1(e.target.value)}
               />
-              <div className="flex mt-4">
+              <div className="flex">
               <button onClick={handleSwap} className="rounded-md bg-gray-100">
                 <IoSwapHorizontal className="h-8 w-8 " />
               </button>
@@ -79,13 +79,13 @@ function Home() {
               <Input
                 variant="outlined"
                 label="To"
-                className="h-16"
+                className=""
                 value={input2}
                 onChange={(e) => setInput2(e.target.value)}
               />
               </div>
             <div className="w-[14vw] ml-20">
-              <Select label="Trip" className=" rounded-md h-16">
+              <Select label="Trip" className=" rounded-md">
                 <Option>Return</Option>
                 <Option>Depart</Option>
               </Select>
@@ -95,7 +95,7 @@ function Home() {
                 variant="outlined"
                 value="07 Nov 22 - 13 Nov 22"
                 label="Depart- Return"
-                className="h-16 rounded-md"
+                className="rounded-md"
               />
             </div>
             <div className="w-[20vw] ml-4">
@@ -103,7 +103,7 @@ function Home() {
                 variant="outlined"
                 value="1 Passenger, Economy"
                 label="Passenger - Class"
-                className="rounded-md h-16"
+                className="rounded-md"
               />
             </div>
           </div>
