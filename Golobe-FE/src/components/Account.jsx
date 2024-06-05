@@ -152,7 +152,7 @@ console.log(details)
           <div className='flex items-center justify-between w-full'>
             <div>
               <p className='text-[16px] font-normal text-[#11221175]'>Date of birth</p>
-              <h1 className='text-[20px] font-semibold'>{date}</h1>
+              <h1 className='text-[20px] font-semibold'>{details.dateOfBirth}</h1>
             </div>
             <div>
               <button className='border-[1px] border-[#8DD3BB] py-2 px-4 flex items-center gap-2 rounded'>
