@@ -1,12 +1,51 @@
-import React from "react";
+import {useState, useEffect} from "react";
 import Profile from "./Profile";
 import Header from "./Header";
+import axios from 'axios';
+import {useNavigate} from 'react-router-dom'
 function AccountHistory() {
+  let token = localStorage.getItem('token')
+  token=token.replace(/"/g, '')
+
+const [details, setDetails] = useState({})
+
+const handleLogout = ()=>{
+  localStorage.removeItem('token');
+  navigate('/login')
+}
+
+useEffect(()=>{
+  let config = {
+    method: 'get',
+    maxBodyLength: Infinity,
+    url: 'http://localhost:8080/api/golobe/get-user',
+    headers: { 
+      'Authorization': `Bearer ${token}`,
+    },
+  };
+  
+  axios.request(config)
+  .then((response) => {
+    console.log(JSON.stringify(response.data));
+    setDetails(response.data.user);
+    console.log(response.data.user+"jjjjjjjjjjjjjjjjjj")
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+  
+},[])
+ 
+  
+
+
+console.log(details)
   return (
     <div className="bg-[#FAFBFC]">
       <Header/>
       <section className='font-["Montserrat"] mx-32 mt-12'>
-        <Profile />
+      <Profile name={details.firstName+" "+details.lastName }
+         email={details.email} image={details.profilePicture}/>
         <div className="flex justify-between">
           <div>
             <h1 className='font-bold text-[32px] font-["Trade_Gothic_LT_Std"] mb-4'>

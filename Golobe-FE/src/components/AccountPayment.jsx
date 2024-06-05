@@ -1,10 +1,48 @@
-import {useState} from 'react'
+import {useState, useEffect} from "react";
 import AddCard from "./AddCard";
 import AddCardModal from './Modals/AddCardModal';
 import Profile from './Profile';
 import Header from './Header';
+import axios from 'axios';
+
 
 function AccountPayment() {
+  let token = localStorage.getItem('token')
+  token=token.replace(/"/g, '')
+
+const [details, setDetails] = useState({})
+
+const handleLogout = ()=>{
+  localStorage.removeItem('token');
+  navigate('/login')
+}
+
+useEffect(()=>{
+  let config = {
+    method: 'get',
+    maxBodyLength: Infinity,
+    url: 'http://localhost:8080/api/golobe/get-user',
+    headers: { 
+      'Authorization': `Bearer ${token}`,
+    },
+  };
+  
+  axios.request(config)
+  .then((response) => {
+    console.log(JSON.stringify(response.data));
+    setDetails(response.data.user);
+    console.log(response.data.user+"jjjjjjjjjjjjjjjjjj")
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+  
+},[])
+ 
+  
+
+
+console.log(details)
   const showModal = ()=>{
     setisClicked(true);
 }
@@ -17,7 +55,8 @@ const [isClicked, setisClicked] = useState(false);
       <Header/>
       <section className='font-["Montserrat"] mx-32 mt-12'>
         
-       <Profile/>
+      <Profile name={details.firstName+" "+details.lastName }
+         email={details.email} image={details.profilePicture}/> 
           <h1 className='font-bold text-[32px] font-["Trade_Gothic_LT_Std"] mb-4'>Account</h1>
           <div className="flex w-full p-6 shadow-[0px_4px_16px_0px_rgba(17,34,17,0.05)] font-['Montserrat'] gap-6 rounded-2xl">
             <div className='p-4 bg-[#8DD3BB] rounded-2xl w-[378px] flex flex-col gap-14'>
