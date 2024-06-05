@@ -69,7 +69,7 @@ console.log(details)
               </a>
               <div>
                 <a href="" className="flex gap-2 items-center">
-                  <img className='w-14 h-14' src={details.profilePicture} alt="" />
+                  <img className='w-14 h-14 rounded-full' src={details.profilePicture} alt="" />
                   <p className="typo">{details.firstName+" "+details.lastName }</p>
                 </a>
               </div>
