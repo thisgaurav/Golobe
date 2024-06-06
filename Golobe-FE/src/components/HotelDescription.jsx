@@ -48,9 +48,9 @@ function HotelDescription() {
               <button className="py-2 px-4 border-[#8DD3BB] border-[2px] rounded-md">
                 <img className="h-5 w-9" src="./images/Share.png" alt="" />
               </button>
-              <button className="w-full bg-[#8DD3BB] rounded-md py-2 px-4 font-semibold">
+              <a href="/hotel-booking-details" className="w-full bg-[#8DD3BB] rounded-md py-2 px-4 font-semibold text-center">
                 Book now
-              </button>
+              </a>
             </div>
           </div>
         </div>
