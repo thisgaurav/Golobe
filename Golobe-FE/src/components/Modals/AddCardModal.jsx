@@ -74,7 +74,7 @@ function AddCardModal({closeModal}) {
                     <label htmlFor="">Securely save my information for 1-click checkout</label>
                 </div>
               <div className="w-full text-center mb-6">
-                <button className="bg-[#8DD3BB] w-full py-4">Add Card</button>
+                <a href="/ticket-details" className="bg-[#8DD3BB] w-full py-4">Add Card</a>
               </div>
               <div>
                 <p className="font-normal text-center">
