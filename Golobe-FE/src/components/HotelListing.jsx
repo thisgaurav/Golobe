@@ -1,7 +1,9 @@
 import React from "react";
 import { Input, Select, Option } from "@material-tailwind/react";
+import hotels from "../content/Hotels/hotels.json"
 import Header from "./Header";
 function HotelListing() {
+
   return (
     <div>
       <Header/>
@@ -168,21 +170,24 @@ function HotelListing() {
                 </select>
               </div>
             </div>
+            {
+              hotels.map((item, index) => (
+        <div key={index}>
             <div className="flight-card flex w-full gap-5 mt-10">
               <div className=" ">
-                <img src="./images/Hotel1.png" className="" alt="" />
+                <img src={item.logo} className="" alt="" />
               </div>
               <div className="w-full">
                 <div className="flex justify-between items-center mb-3">
                   <div className="flex flex-col gap-4 w-[70%]">
                     <h1 className="text-3xl trade">
-                      CVK Park Bosphorus Hotel Istanbul
+                      {item.name}
                     </h1>
                   </div>
                   <div className="flex flex-col justify-end">
                     <p className="font-normal">Starting From</p>
                     <p className="text-[#FF8682] text-3xl font-semibold text-right">
-                      $240/night
+                      {item.price}
                     </p>
                     <p className="font-normal text-right">excl. tax</p>
                   </div>
@@ -191,7 +196,7 @@ function HotelListing() {
                 <div className="flex flex-col gap-5">
                   <div className="flex ">
                     <img src="./images/Location.png" alt="" />
-                    <p>Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437</p>
+                    <p>{item.address}</p>
                   </div>
                   <div className="flex gap-10">
                     <div className="flex items-center gap-2">
@@ -226,177 +231,9 @@ function HotelListing() {
                 </div>
               </div>
             </div>
-
-            <div className="flight-card flex w-full gap-5 mt-10">
-              <div>
-                <img src="./images/Hotel2.png" alt="" />
-              </div>
-              <div className="w-full">
-                <div className="flex justify-between items-center mb-3">
-                  <div className="flex flex-col gap-4 w-[70%]">
-                    <h1 className="text-3xl trade">
-                    Eresin Hotels Sultanahmet - Boutique Class
-                    </h1>
-                  </div>
-                  <div className="flex flex-col justify-end">
-                    <p className="font-normal">Starting From</p>
-                    <p className="text-[#FF8682] text-3xl font-semibold text-right">
-                      $104/night
-                    </p>
-                    <p className="font-normal text-right">excl. tax</p>
-                  </div>
-                  <div></div>
-                </div>
-                <div className="flex flex-col gap-5">
-                  <div className="flex ">
-                    <img src="./images/Location.png" alt="" />
-                    <p>Kucukayasofya No. 40 Sultanahmet, Istanbul 34022</p>
-                  </div>
-                  <div className="flex gap-10">
-                    <div className="flex items-center gap-2">
-                    <img src="./images/5-star.png" alt="" />
-                    <p className="font-normal">5 Star Hotel</p>
-                    </div>
-                    <div className="flex">
-                        <img src="./images/cafe.png" alt="" />
-                        <p className="font-normal"><span className="font-semibold">20+ </span>Aminities</p>
-                    </div>
-                    
-                  </div>
-                  <div className="flex gap-4 w-[full] items-center border-b-[2px] pb-5">
-                    <p className="border-[#8DD3BB] border-[2px] p-2 rounded-md">
-                      4.2
-                    </p>
-                    <div className="flex gap-2">
-                      <p className="font-bold">Very Good</p>
-                      <p className="font-normal">54 Reviews</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-5">
-                  <button className="p-3 border-[#8DD3BB] border-[2px]">
-                    <img src="./images/heart.png" alt="" />
-                  </button>
-                  <button className="w-full bg-[#8DD3BB] rounded-md">
-                    View Deals
-                  </button>
-                </div>
-                </div>
-              </div>
             </div>
-
-            <div className="flight-card flex w-full gap-5 mt-10">
-              <div>
-                <img src="./images/Hotel3.png" alt="" />
-              </div>
-              <div className="w-full">
-                <div className="flex justify-between items-center mb-3">
-                  <div className="flex flex-col gap-4 w-[70%]">
-                    <h1 className="text-3xl trade">
-                    Eresin Hotels Sultanahmet - Boutique Class
-                    </h1>
-                  </div>
-                  <div className="flex flex-col justify-end">
-                    <p className="font-normal">Starting From</p>
-                    <p className="text-[#FF8682] text-3xl font-semibold text-right">
-                      $104/night
-                    </p>
-                    <p className="font-normal text-right">excl. tax</p>
-                  </div>
-                  <div></div>
-                </div>
-                <div className="flex flex-col gap-5">
-                  <div className="flex ">
-                    <img src="./images/Location.png" alt="" />
-                    <p>Kucukayasofya No. 40 Sultanahmet, Istanbul 34022</p>
-                  </div>
-                  <div className="flex gap-10">
-                    <div className="flex items-center gap-2">
-                    <img src="./images/5-star.png" alt="" />
-                    <p className="font-normal">5 Star Hotel</p>
-                    </div>
-                    <div className="flex">
-                        <img src="./images/cafe.png" alt="" />
-                        <p className="font-normal"><span className="font-semibold">20+ </span>Aminities</p>
-                    </div>
-                    
-                  </div>
-                  <div className="flex gap-4 w-[full] items-center border-b-[2px] pb-5">
-                    <p className="border-[#8DD3BB] border-[2px] p-2 rounded-md">
-                      4.2
-                    </p>
-                    <div className="flex gap-2">
-                      <p className="font-bold">Very Good</p>
-                      <p className="font-normal">54 Reviews</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-5">
-                  <button className="p-3 border-[#8DD3BB] border-[2px]">
-                    <img src="./images/heart.png" alt="" />
-                  </button>
-                  <button className="w-full bg-[#8DD3BB] rounded-md">
-                    View Deals
-                  </button>
-                </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="flight-card flex w-full gap-5 mt-10">
-              <div>
-                <img src="./images/Hotel4.png" alt="" />
-              </div>
-              <div className="w-full">
-                <div className="flex justify-between items-center mb-3">
-                  <div className="flex flex-col gap-4 w-[70%]">
-                    <h1 className="text-3xl trade">
-                    Eresin Hotels Sultanahmet - Boutique Class
-                    </h1>
-                  </div>
-                  <div className="flex flex-col justify-end">
-                    <p className="font-normal">Starting From</p>
-                    <p className="text-[#FF8682] text-3xl font-semibold text-right">
-                      $104/night
-                    </p>
-                    <p className="font-normal text-right">excl. tax</p>
-                  </div>
-                  <div></div>
-                </div>
-                <div className="flex flex-col gap-5">
-                  <div className="flex ">
-                    <img src="./images/Location.png" alt="" />
-                    <p>Kucukayasofya No. 40 Sultanahmet, Istanbul 34022</p>
-                  </div>
-                  <div className="flex gap-10">
-                    <div className="flex items-center gap-2">
-                    <img src="./images/5-star.png" alt="" />
-                    <p className="font-normal">5 Star Hotel</p>
-                    </div>
-                    <div className="flex">
-                        <img src="./images/cafe.png" alt="" />
-                        <p className="font-normal"><span className="font-semibold">20+ </span>Aminities</p>
-                    </div>
-                    
-                  </div>
-                  <div className="flex gap-4 w-[full] items-center border-b-[2px] pb-5">
-                    <p className="border-[#8DD3BB] border-[2px] p-2 rounded-md">
-                      4.2
-                    </p>
-                    <div className="flex gap-2">
-                      <p className="font-bold">Very Good</p>
-                      <p className="font-normal">54 Reviews</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-5">
-                  <button className="p-3 border-[#8DD3BB] border-[2px]">
-                    <img src="./images/heart.png" alt="" />
-                  </button>
-                  <button className="w-full bg-[#8DD3BB] rounded-md">
-                    View Deals
-                  </button>
-                </div>
-                </div>
-              </div>
-            </div>
+              ))
+            }
             <button className="bg-[#112211] text-white rounded-md p-4 w-full my-10">
               Show more results
             </button>

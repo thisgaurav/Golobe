@@ -1,0 +1,31 @@
+[{
+  "id":"0",
+  "name":"CVK Park Bosphorus Hotel Istanbul",
+  "logo":"/images/Hotel1.png",
+  "address":"Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437",
+  "price":"$240"
+
+},
+{
+  "id":"1",
+  "name":"Hotel Parc Estique",
+  "logo":"/images/Hotel2.png",
+  "address":"viman Nagar Nagar Road, Pune -411014, MAHARASHTRA",
+  "price":"$350/night"
+},
+{
+  "id":"2",
+  "name":"Eresin Hotels Sultanahmet - Boutique Class",
+  "logo":"/images/Hotel3.png",
+  "address":"Kucukayasofya No. 40 Sultanahmet, Istanbul 34022",
+  "price":"$150"
+},
+{
+  "id":"3",
+  "name":"The Westin Mumbai Garden City",
+  "logo":"/images/Hotel4.png",
+  "address":"Oberoi Garden City, International Business Park",
+  "price":"$104/night"
+
+}
+]

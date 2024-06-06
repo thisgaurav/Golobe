@@ -1,5 +1,6 @@
 import React from "react";
 import { Input, Select, Option } from "@material-tailwind/react";
+import flights from "../content/Flights/flights.json"
 import { LuPlus } from "react-icons/lu";
 import { IoSend } from "react-icons/io5";
 import "../component-styles/styles.css";
@@ -195,9 +196,12 @@ function FlightListing() {
                 </select>
               </div>
             </div>
+            {
+            flights.map((item, index) => (
+              <div key={index}>
             <div className="flight-card flex w-full gap-5 mt-10">
               <div>
-                <img src="./images/Emirates-logo.png" alt="" />
+                <img src={item.logo} alt="" />
               </div>
               <div className="w-full">
                 <div className="flex justify-between items-center mb-3">
@@ -209,8 +213,8 @@ function FlightListing() {
                     </div>
                   </div>
                   <div className="flex flex-col justify-end">
-                    <p className="font-normal">Starting From</p>
-                    <p className="text-[#FF8682] text-3xl font-semibold text-right">$104</p>
+                    <p className="font-normal text-right">Starting From</p>
+                    <p className="text-[#FF8682] text-3xl font-semibold text-right">{item.price}</p>
                   </div>
                 </div>
                 <div className="flex flex-col gap-5 pb-3 border-b-[2px]">
@@ -257,198 +261,9 @@ function FlightListing() {
                 </div>
               </div>
             </div>
-
-            <div className="flight-card flex w-full gap-5 mt-10">
-              <div>
-                <img src="./images/fly-dubai.png" alt="" />
-              </div>
-              <div className="w-full">
-                <div className="flex justify-between items-center mb-3">
-                  <div className="flex gap-4 w-[70%] items-center">
-                    <p className="border-[#8DD3BB] border-[2px] p-2 rounded-md">4.2</p>
-                    <div className="flex gap-2">
-                      <p className="font-bold">Very Good</p>
-                      <p className="font-normal">54 Reviews</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-col justify-end">
-                    <p className="font-normal">Starting From</p>
-                    <p className="text-[#FF8682] text-3xl font-semibold text-right">$104</p>
-                  </div>
-                  <div></div>
-                </div>
-                <div className="flex flex-col gap-5 pb-3 border-b-[2px]">
-                    <div className="flex gap-16">
-                        <div className="flex gap-3 items-center">
-                        <input type="checkbox" />
-                        <div>
-                        <label htmlFor="">12:00pm - 1:28pm</label>
-                        <p className="font-normal">Emirates</p>
-                        </div>
-                        
-                        
-                        </div>
-                        <p className="text-[#121]">non-stop</p>
-                        <div>
-                            <p className="text-[#121]">2h 28m</p>
-                            <p className="font-normal">EWR-BNA</p>
-                        </div>
-                    </div>
-                    <div className="flex gap-16">
-                        <div className="flex gap-3 items-center">
-                        <input type="checkbox" />
-                        <div>
-                        <label htmlFor="">12:00pm - 1:28pm</label>
-                        <p className="font-normal">Emirates</p>
-                        </div>
-                        
-                        
-                        </div>
-                        <p className="text-[#121]">non-stop</p>
-                        <div>
-                            <p className="text-[#121]">2h 28m</p>
-                            <p className="font-normal">EWR-BNA</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="mt-5 flex gap-5">
-                    <button className="p-3 border-[#8DD3BB] border-[2px]"> 
-                        <img src="./images/heart.png" alt="" />
-                    </button>
-                    <button className="w-full bg-[#8DD3BB] rounded-md">
-                        View Deals
-                    </button>
-                </div>
-              </div>
             </div>
-
-            <div className="flight-card flex w-full gap-5 mt-10">
-              <div>
-                <img src="./images/qatar.png" alt="" />
-              </div>
-              <div className="w-full">
-                <div className="flex justify-between items-center mb-3">
-                  <div className="flex gap-4 w-[70%] items-center">
-                    <p className="border-[#8DD3BB] border-[2px] p-2 rounded-md">4.2</p>
-                    <div className="flex gap-2">
-                      <p className="font-bold">Very Good</p>
-                      <p className="font-normal">54 Reviews</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-col justify-end">
-                    <p className="font-normal">Starting From</p>
-                    <p className="text-[#FF8682] text-3xl font-semibold text-right">$104/night</p>
-                  </div>
-                  <div></div>
-                </div>
-                <div className="flex flex-col gap-5 pb-3 border-b-[2px]">
-                    <div className="flex gap-16">
-                        <div className="flex gap-3 items-center">
-                        <input type="checkbox" />
-                        <div>
-                        <label htmlFor="">12:00pm - 1:28pm</label>
-                        <p className="font-normal">Emirates</p>
-                        </div>
-                        
-                        
-                        </div>
-                        <p className="text-[#121]">non-stop</p>
-                        <div>
-                            <p className="text-[#121]">2h 28m</p>
-                            <p className="font-normal">EWR-BNA</p>
-                        </div>
-                    </div>
-                    <div className="flex gap-16">
-                        <div className="flex gap-3 items-center">
-                        <input type="checkbox" />
-                        <div>
-                        <label htmlFor="">12:00pm - 1:28pm</label>
-                        <p className="font-normal">Emirates</p>
-                        </div>
-                        
-                        
-                        </div>
-                        <p className="text-[#121]">non-stop</p>
-                        <div>
-                            <p className="text-[#121]">2h 28m</p>
-                            <p className="font-normal">EWR-BNA</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="mt-5 flex gap-5">
-                    <button className="p-3 border-[#8DD3BB] border-[2px]"> 
-                        <img src="./images/heart.png" alt="" />
-                    </button>
-                    <button className="w-full bg-[#8DD3BB] rounded-md">
-                        View Deals
-                    </button>
-                </div>
-              </div>
-            </div>
-
-            <div className="flight-card flex w-full gap-5 mt-10">
-              <div>
-                <img src="./images/etihad.png" alt="" />
-              </div>
-              <div className="w-full">
-                <div className="flex justify-between items-center mb-3">
-                  <div className="flex gap-4 w-[70%] items-center">
-                    <p className="border-[#8DD3BB] border-[2px] p-2 rounded-md">4.2</p>
-                    <div className="flex gap-2">
-                      <p className="font-bold">Very Good</p>
-                      <p className="font-normal">54 Reviews</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-col justify-end">
-                    <p className="font-normal">Starting From</p>
-                    <p className="text-[#FF8682] text-3xl font-semibold text-right">$104/night</p>
-                  </div>
-                  <div></div>
-                </div>
-                <div className="flex flex-col gap-5 pb-3 border-b-[2px]">
-                    <div className="flex gap-16">
-                        <div className="flex gap-3 items-center">
-                        <input type="checkbox" />
-                        <div>
-                        <label htmlFor="">12:00pm - 1:28pm</label>
-                        <p className="font-normal">Emirates</p>
-                        </div>
-                        
-                        
-                        </div>
-                        <p className="text-[#121]">non-stop</p>
-                        <div>
-                            <p className="text-[#121]">2h 28m</p>
-                            <p className="font-normal">EWR-BNA</p>
-                        </div>
-                    </div>
-                    <div className="flex gap-16">
-                        <div className="flex gap-3 items-center">
-                        <input type="checkbox" />
-                        <div>
-                        <label htmlFor="">12:00pm - 1:28pm</label>
-                        <p className="font-normal">Emirates</p>
-                        </div>
-                        
-                        
-                        </div>
-                        <p className="text-[#121]">non-stop</p>
-                        <div>
-                            <p className="text-[#121]">2h 28m</p>
-                            <p className="font-normal">EWR-BNA</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="mt-5 flex gap-5">
-                    <button className="p-3 border-[#8DD3BB] border-[2px]"> 
-                        <img src="./images/heart.png" alt="" />
-                    </button>
-                    <button className="w-full bg-[#8DD3BB] rounded-md">
-                        View Deals
-                    </button>
-                </div>
-              </div>
-            </div>
+            ))
+          }
           <button className="bg-black text-white rounded-md p-4 w-full my-10">Show more results</button>
           </div>
         </div>
