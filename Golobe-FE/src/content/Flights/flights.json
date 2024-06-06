@@ -1,0 +1,27 @@
+[{
+  "id":"0",
+  "name":"Emirates",
+  "logo":"/images/Emirates-logo.png",
+  "price":"$104"
+
+},
+{
+  "id":"1",
+  "name":"Flydubai",
+  "logo":"/images/fly-dubai.png",
+  "price":"$250"
+},
+{
+  "id":"2",
+  "name":"Qatar",
+  "logo":"/images/qatar.png",
+  "price":"$104/night"
+
+},
+{
+  "id":"3",
+  "name":"Etihad",
+  "logo":"/images/etihad.png",
+  "price":"$104/night"
+}
+]
