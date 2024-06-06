@@ -1,7 +1,35 @@
-import React from "react";
-import Header from "./Header";
 
+import Header from "./Header";
+import {useState, useEffect} from 'react';
+import '../component-styles/styles.css';
+import axios from 'axios';
 function TicketDetails() {
+
+  const [details, setDetails] = useState({});
+  const token = localStorage.getItem('token'); // Get token from localStorage
+
+  useEffect(() => {
+    if (token) { // Check if token exists before making API request
+      const config = {
+        method: 'get',
+        maxBodyLength: Infinity,
+        url: 'http://localhost:8080/api/golobe/get-user',
+        headers: {
+          Authorization: `Bearer ${token.replace(/"/g, '')}`, // Remove quotes
+        },
+      };
+
+      axios.request(config)
+        .then((response) => {
+          console.log(JSON.stringify(response.data));
+          setDetails(response.data.user);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  }, [token]); // Re-run useEffect only when token changes
+
   return (
     <div>
       <Header/>
@@ -73,10 +101,10 @@ function TicketDetails() {
             <div className="border-[#EAEAEA] border-[1px] border-l-0 rounded-e-2xl">
               <div className="w-[910px] h-[102px] bg-[#8DD3BB] rounded-se-2xl flex items-center justify-between p-6">
                 <div className="flex gap-4">
-                  <img src="./images/Ellipse1.png" alt="" />
+                  <img src={details.profilePicture} className="w-[48px]" alt="" />
                   <div>
                     <h1 className='font-semibold font-["Trade_Gothic_LT_Std"] text-[20px]'>
-                      James Doe
+                      {details.firstName} {details.lastName}
                     </h1>
                     <p>Boarding Pass N’123</p>
                   </div>
