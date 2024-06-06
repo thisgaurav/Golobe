@@ -5,6 +5,7 @@ import Header from "./Header";
 function BookingDetail() {
   const [isClicked, setisClicked] = useState(false);
     const closeModal = () => setisClicked(false);
+    const token = localStorage.getItem('token');
   return (
     
     <div>
@@ -105,7 +106,7 @@ function BookingDetail() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-4">
+            {token ?(<AddCard setisClicked={setisClicked}/>):(<div className="flex flex-col gap-4">
               <div>
                 <h1>Login or Sign up to book</h1>
               </div>
@@ -149,8 +150,9 @@ function BookingDetail() {
                   <p className="text-lg">Continue with email</p>
                 </button>
               </div>
-            </div>
-          <AddCard setisClicked={setisClicked}/>
+            </div>)}
+            
+          
           </div>
           <div className="w-[40%] h-[490px] p-6 shadow-[0px_4px_16px_0px_rgba(17,34,17,0.05)]">
             <div className="flex gap-5 border-b-[2px] pb-4">
