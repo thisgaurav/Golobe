@@ -1,6 +1,7 @@
 import React from "react";
 import { Input, Select, Option } from "@material-tailwind/react";
 import hotels from "../content/Hotels/hotels.json"
+import { Link } from "react-router-dom";
 import Header from "./Header";
 function HotelListing() {
 
@@ -172,7 +173,9 @@ function HotelListing() {
             </div>
             {
               hotels.map((item, index) => (
-        <div key={index}>
+                
+        <div key={item.id}>
+          {console.log(item)}
             <div className="flight-card flex w-full gap-5 mt-10">
               <div className=" ">
                 <img src={item.logo} className="" alt="" />
@@ -224,7 +227,7 @@ function HotelListing() {
                   </button>
                   
                   <button className="w-full bg-[#8DD3BB] rounded-md">
-                  <a href="/hotel-description">View Deals</a>
+                  <Link to={`/hotels/${item.id}`}>View Deals</Link>
                   </button>
                   
                 </div>

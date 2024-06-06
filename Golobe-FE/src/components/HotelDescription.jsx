@@ -1,32 +1,40 @@
 import React from "react";
 import Header from "./Header";
-
+import { useParams } from 'react-router-dom';
+import hotels from "../content/Hotels/hotels.json"
 function HotelDescription() {
+
+  const { id } = useParams();
+  const hotel = hotels.find(hotel => hotel.id === parseInt(id));
+
+  if (!hotel) return <div>Item not found</div>;
+
+
   return (
     <div>
       <Header/>
       <section className='font-["Montserrat"] mx-32 mb-6'>
         <div className="flex gap-2 my-10 font-normal ">
           <span className="font-semibold text-[#FF8682]">Turkey</span>
-          <img className="h-5 w-5" src="./images/arrow_forward.png" alt="" />
+          <img className="h-5 w-5" src="../images/arrow_forward.png" alt="" />
           <span className="font-semibold text-[#FF8682]">Istanbul</span>
-          <img className="h-5 w-5" src="./images/arrow_forward.png" alt="" />
+          <img className="h-5 w-5" src="../images/arrow_forward.png" alt="" />
           <span className="text-[#9da49d]">
-            CVK Park Bosphorus Hotel Istanbul
+            {hotel.name}
           </span>
         </div>
         <div className="flex justify-between mb-8">
           <div className="flex flex-col">
             <div className="flex  items-center">
               <h1 className='font-semibold font-["Trade_Gothic_LT_Std"] text-[24px] mb-4 mr-2'>
-                CVK Park Bosphorus Hotel Istanbul
+                {hotel.name}
               </h1>
-              <img className="mb-4" src="./images/5-star.png" alt="" />
+              <img className="mb-4" src='../images/5-star.png' alt="" />
               <h1 className="mb-3 ml-2">5 Star Hotel</h1>
             </div>
             <div className="flex gap-1 items-center mb-2">
-              <img className="h-5 w-5" src="./images/Location.png" alt="" />
-              <p>Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437</p>
+              <img className="h-5 w-5" src="../images/Location.png" alt="" />
+              <p>{hotel.address}</p>
             </div>
             <div className="flex gap-2 items-center">
               <div className="border-[1px] border-[#8DD3BB] rounded-md w-[40px] h-[32px] flex items-center justify-center">
@@ -39,14 +47,14 @@ function HotelDescription() {
           </div>
           <div className="flex flex-col justify-between">
             <span className="text-[#FF8682] text-4xl font-semibold text-right">
-              $240<span className="text-[16px]">/night</span>
+              {hotel.price}
             </span>
             <div className="flex gap-4">
               <button className="py-2 px-4 border-[#8DD3BB] border-[2px] rounded-md">
-                <img className="h-5 w-10" src="./images/heart.png" alt="" />
+                <img className="h-5 w-10" src="../images/heart.png" alt="" />
               </button>
               <button className="py-2 px-4 border-[#8DD3BB] border-[2px] rounded-md">
-                <img className="h-5 w-9" src="./images/Share.png" alt="" />
+                <img className="h-5 w-9" src="../images/Share.png" alt="" />
               </button>
               <a href="/hotel-booking-details" className="w-full bg-[#8DD3BB] rounded-md py-2 px-4 font-semibold text-center">
                 Book now
@@ -55,14 +63,8 @@ function HotelDescription() {
           </div>
         </div>
         <div className="flex w-full gap-2">
-          <div className="w-[67%]">
-            <img className="rounded-s-2xl" src="./images/Room1.jpg" alt="" />
-          </div>
-          <div className="flex flex-wrap gap-2 w-[40%]">
-            <img src="./images/Room2.png" alt="" />
-            <img src="./images/Room3.png" alt="" />
-            <img src="./images/Room4.png" alt="" />
-            <img src="./images/Room5.png" alt="" />
+          <div className="w-full">
+            <img className="rounded-2xl w-full" src={hotel.logo} alt="" />
           </div>
         </div>
       </section>
@@ -98,19 +100,19 @@ function HotelDescription() {
               <p className="font-medium text-[14px]">371 reviews</p>
             </div>
             <div className="border-[#8DD3BB] border-[1px] w-[166px] h-[145px] py-4 pl-4 pr-16 rounded-xl">
-              <img src="./images/3-Stars.png" className="mb-16" alt="" />
+              <img src="../images/3-Stars.png" className="mb-16" alt="" />
               <p className="font-medium text-[14px]">Near park</p>
             </div>
             <div className="border-[#8DD3BB] border-[1px] w-[166px] h-[145px] py-4 pl-4 pr-12 rounded-xl">
-              <img src="./images/3-Stars.png" className="mb-16" alt="" />
+              <img src="../images/3-Stars.png" className="mb-16" alt="" />
               <p className="font-medium text-[14px]">Near nightlife</p>
             </div>
             <div className="border-[#8DD3BB] border-[1px] w-[166px] h-[145px] py-4 pl-4 pr-12 rounded-xl">
-              <img src="./images/3-Stars.png" className="mb-16" alt="" />
+              <img src="../images/3-Stars.png" className="mb-16" alt="" />
               <p className="font-medium text-[14px]">Near theater</p>
             </div>
             <div className="border-[#8DD3BB] border-[1px] w-[166px] h-[145px] py-4 pl-4 pr-16 rounded-xl">
-              <img src="./images/3-Stars.png" className="mb-16" alt="" />
+              <img src="../images/3-Stars.png" className="mb-16" alt="" />
               <p className="font-medium text-[14px]">Clean Hotel</p>
             </div>
           </div>
@@ -125,7 +127,7 @@ function HotelDescription() {
             <div className="flex items-center gap-4">
               <img
                 className="w-[48px] h-[48px] rounded-md"
-                src="./images/Room2.png"
+                src="../images/Room2.png"
                 alt=""
               />
               <p>Superior room - 1 double bed or 2 twin beds</p>
@@ -143,7 +145,7 @@ function HotelDescription() {
             <div className="flex items-center gap-4">
               <img
                 className="w-[48px] h-[48px] rounded-md"
-                src="./images/Room3.png"
+                src="../images/Room3.png"
                 alt=""
               />
               <p>Superior room - City view - 1 double bed or 2 twin beds</p>
@@ -161,7 +163,7 @@ function HotelDescription() {
             <div className="flex items-center gap-4">
               <img
                 className="w-[48px] h-[48px] rounded-md"
-                src="./images/Room4.png"
+                src="../images/Room4.png"
                 alt=""
               />
               <p>Superior room - City view - 1 double bed or 2 twin beds</p>
@@ -179,7 +181,7 @@ function HotelDescription() {
             <div className="flex items-center gap-4">
               <img
                 className="w-[48px] h-[48px] rounded-md"
-                src="./images/Room5.png"
+                src="../images/Room5.png"
                 alt=""
               />
               <p>Superior room - City view - 1 double bed or 2 twin beds</p>
@@ -214,7 +216,7 @@ function HotelDescription() {
               ></iframe>
             </div>
             <div className="flex items-center gap-2 mt-2">
-              <img src="./images/Location.png " alt="" />
+              <img src="../images/Location.png " alt="" />
               <p>Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437</p>
             </div>
           </div>
@@ -226,11 +228,11 @@ function HotelDescription() {
               <div className="flex flex-col gap-6">
                 <div className="flex justify-between">
                   <div className="flex gap-2 ">
-                    <img src="./images/outdoor.png" alt="" />
+                    <img src="../images/outdoor.png" alt="" />
                     <h1 className="font-medium text-[16px]">Outdoor pool</h1>
                   </div>
                   <div className="flex gap-2 items-center justify-start">
-                    <img src="./images/fitness.png" alt="" />
+                    <img src="../images/fitness.png" alt="" />
                     <h1 className="font-medium text-[16px] text-left pr-11">
                       Fitness center
                     </h1>
@@ -238,11 +240,11 @@ function HotelDescription() {
                 </div>
                 <div className="flex justify-between">
                   <div className="flex gap-2 items-center">
-                    <img src="./images/outdoor.png" alt="" />
+                    <img src="../images/outdoor.png" alt="" />
                     <h1 className="font-medium text-[16px]">Indoor pool</h1>
                   </div>
                   <div className="flex gap-2 items-center justify-start">
-                    <img src="./images/wine.png" alt="" />
+                    <img src="../images/wine.png" alt="" />
                     <h1 className="font-medium text-[16px] pr-16">
                       Bar/Lounge
                     </h1>
@@ -250,13 +252,13 @@ function HotelDescription() {
                 </div>
                 <div className="flex justify-between">
                   <div className="flex gap-2 items-center">
-                    <img src="./images/spa.png" alt="" />
+                    <img src="../images/spa.png" alt="" />
                     <h1 className="font-medium text-[16px]">
                       Spa and wellness center
                     </h1>
                   </div>
                   <div className="flex gap-2 items-center">
-                    <img src="./images/Wifi.png" alt="" />
+                    <img src="../images/Wifi.png" alt="" />
                     <h1 className="font-medium text-[16px] pr-[75px]">
                       Free Wi-Fi
                     </h1>
@@ -264,11 +266,11 @@ function HotelDescription() {
                 </div>
                 <div className="flex justify-between">
                   <div className="flex gap-2 items-center">
-                    <img src="./images/restaurant.png" alt="" />
+                    <img src="../images/restaurant.png" alt="" />
                     <h1 className="font-medium text-[16px]">Restaurant</h1>
                   </div>
                   <div className="flex gap-2 items-center">
-                    <img src="./images/Breakfast.png" alt="" />
+                    <img src="../images/Breakfast.png" alt="" />
                     <h1 className="font-medium text-[16px]">
                       Tea/coffee machine
                     </h1>
@@ -276,7 +278,7 @@ function HotelDescription() {
                 </div>
                 <div className="flex justify-between">
                   <div className="flex gap-2 items-center">
-                    <img src="./images/roomservice.png" alt="" />
+                    <img src="../images/roomservice.png" alt="" />
                     <h1 className="font-medium text-[16px]">Room service</h1>
                   </div>
                   <div className="flex gap-2 items-center">
@@ -307,7 +309,7 @@ function HotelDescription() {
             <div>
               <div className="flex items-center gap-4 mt-6">
                 <div>
-                  <img src="./images/profile-1.png" alt="" />
+                  <img src="../images/profile-1.png" alt="" />
                 </div>
                 <div>
                   <div className="flex gap-2">

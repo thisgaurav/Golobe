@@ -44,7 +44,7 @@ function App() {
         <Route path='/verify' element={<VerifyCode/>}/>
         <Route path='/set-password' element={<ResetPassword/>}/>
         <Route path='/payment' element={<PaymentMethod/>}/>
-        <Route path='/Hotel-description' element={<HotelDescription/>}/>
+        <Route path="/hotels/:id" element={<HotelDescription/>}/>
         <Route path='/account' element={<Account/>}/>
         <Route path='/account-history' element={<AccountHistory/>}/>
         <Route path='/stays-account-history' element={<StaysAccountHistory/>}/>
