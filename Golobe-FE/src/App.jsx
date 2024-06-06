@@ -22,6 +22,7 @@ import AccountHistory from './components/AccountHistory'
 import AccountPayment from './components/AccountPayment'
 import HotelTicketDetails from './components/HotelTicketDetails'
 import StaysAccountHistory from './components/StaysAccountHistory'
+import HotelBookingDetail from './components/HotelBookingDetail'
 function App() {
 
   return (
@@ -48,6 +49,7 @@ function App() {
         <Route path='/account-history' element={<AccountHistory/>}/>
         <Route path='/stays-account-history' element={<StaysAccountHistory/>}/>
         <Route path='/account-payment' element={<AccountPayment/>}/>
+        <Route path='/hotel-booking-details' element={<HotelBookingDetail/>}/>
       </Routes>
       <Footer/>
     </>
